@@ -1,0 +1,23 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="55">
+
+    <mat-accordion multi>
+      <!--Menu cadastros-->
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false" class="expansion-panel">
+        <mat-expansion-panel-header>
+            Cadastro
+        </mat-expansion-panel-header>
+        <p>Produto</p>
+        <p>Lista Técnica</p>
+        <p>Cadastro Insumo</p>
+        <p>Estoque Insumo</p>
+        <p>Unidade Engenharia</p>
+        <p>Modo Manufatura</p>
+        <p>Tipo Manufatura</p>
+      </mat-expansion-panel>
+
+    </mat-accordion>
+  </mat-sidenav>
+
+</mat-sidenav-container>

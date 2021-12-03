@@ -1,0 +1,33 @@
+.sidenav{
+  background-color: #181718;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+}
+
+.sidenav a {
+  color: #fff;
+}
+
+.sidenav i {
+  padding-right: 10px;
+}
+
+.content {
+  padding: 16px;
+  background-color: #fff;
+}
+
+
+.expansion-panel{
+  background: #181718;
+  color: white;
+  margin-top: 10px;
+
+}
+
+/*deixa na cor branca a seta do menu de expansão */
+::ng-deep.mat-expansion-indicator::after, .mat-expansion-panel-header-description {
+  color: white;
+}
