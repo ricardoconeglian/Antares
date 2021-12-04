@@ -8,16 +8,18 @@
         <mat-expansion-panel-header>
             Cadastro
         </mat-expansion-panel-header>
-        <p>Produto</p>
-        <p>Lista Técnica</p>
-        <p>Cadastro Insumo</p>
-        <p>Estoque Insumo</p>
-        <p>Unidade Engenharia</p>
-        <p>Modo Manufatura</p>
-        <p>Tipo Manufatura</p>
+        <a class="nav-link" routerLink="produto">Produto</a>
+        <a class="nav-link" routerLink="/lista-tecnica">Lista Técnica</a>
+        <a class="nav-link" routerLink="/cadastro-insumo">Cadastro Insumo</a>
+        <a class="nav-link" routerLink="/estoque-insumo">Estoque Insumo</a>
+        <a class="nav-link" routerLink="/unidade-engenharia">Unidade Engenharia</a>
+        <a class="nav-link" routerLink="/modo-manufatura">Modo Manufatura</a>
+        <a class="nav-link" routerLink="/tipo-manufatura">Tipo Manufatura</a>
       </mat-expansion-panel>
 
     </mat-accordion>
   </mat-sidenav>
-
+  <mat-sidenav-content class="content">
+    <router-outlet></router-outlet>
+ </mat-sidenav-content>
 </mat-sidenav-container>

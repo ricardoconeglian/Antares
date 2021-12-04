@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import {MatExpansionModule} from '@angular/material/expansion';
 
 
+
 @NgModule({
   declarations: [
     NavbarComponent,
@@ -23,7 +24,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatSidenavModule,
     MatListModule,
     RouterModule,
-    MatExpansionModule
+    MatExpansionModule,
+
   ],
   exports: [
     MatToolbarModule,
