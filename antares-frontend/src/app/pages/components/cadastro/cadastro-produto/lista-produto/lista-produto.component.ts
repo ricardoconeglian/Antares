@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild} from '@angular/core';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-lista-produto',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaProdutoComponent implements OnInit {
 
+
+
+
   constructor() { }
 
   ngOnInit(): void {
+
+
   }
 
+
+
+
+
 }
+
