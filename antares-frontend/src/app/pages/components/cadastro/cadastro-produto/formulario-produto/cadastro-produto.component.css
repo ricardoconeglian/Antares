@@ -1,0 +1,10 @@
+
+/*mat-input focused color*/
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick{
+  color: #D9CB04;
+}
+/* mat-label focused style */
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: #D9CB04;
+}
+

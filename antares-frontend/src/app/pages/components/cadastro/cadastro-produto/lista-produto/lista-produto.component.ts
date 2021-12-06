@@ -1,5 +1,6 @@
-import { Component, OnInit, AfterViewInit, ViewChild} from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
+import { Component, OnInit} from '@angular/core';
+
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-produto',
@@ -11,13 +12,16 @@ export class ListaProdutoComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
 
 
   }
 
+  navegarParaCadastroProduto(){
+    this.router.navigate(['/produto/cadastro-produto',])
+  }
 
 
 
