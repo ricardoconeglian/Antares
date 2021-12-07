@@ -3,42 +3,42 @@
     Cadastro Produto
   </div>
   <div class="card-body">
-    <form>
+    <form formGroup="produtoForm">
       <!--Campo código SAP-->
       <div class="form-group col-md-3">
-        <label for="codigoSap">Código SAP</label>
-        <input type="text" class="form-control" id="codigoSap">
+        <label for="codigo_sap_produto">Código SAP</label>
+        <input type="number" class="form-control" id="codigo_sap_produto" [(ngModel)]="produto.codigo_sap_produto">
       </div>
 
       <!--Campo nome do Produto-->
       <div class="form-group col-md">
-        <label for="nomeProduto">Nome do Produto</label>
-        <input type="text" class="form-control" id="nomeProduto">
+        <label for="nome_produto">Nome do Produto</label>
+        <input type="text" class="form-control" id="nome_produto" [(ngModel)]="produto.nome_produto">
       </div>
 
       <!--Campo descrição do Produto-->
       <div class="form-group col-md">
-        <label for="descriçãoProduto">Descrição do Produto</label>
-        <input type="text" class="form-control" id="descriçãoProduto">
+        <label for="descricao_produto">Descrição do Produto</label>
+        <input type="text" class="form-control" id="descricao_produto" [(ngModel)]="produto.descricao_produto">
       </div>
 
       <!--Campo utilização do Produto-->
       <div class="form-group col-md">
-        <label for="utilizaçãoProduto">Utilização do Produto</label>
-        <input type="text" class="form-control" id="utilizaçãoProduto">
+        <label for="utilizacao">Utilização do Produto</label>
+        <input type="text" class="form-control" id="utilizacao" [(ngModel)]="produto.utilizacao">
       </div>
 
       <div class="row margin-left">
         <!--Campo projeto do Produto-->
         <div class="col form-group col-md">
-          <label for="projetoProduto">Projeto</label>
-          <input type="file" class="form-control-file" id="projetoProduto">
+          <label for="projeto">Projeto</label>
+          <input type="file" class="form-control-file" id="projeto" [(ngModel)]="produto.projeto">
         </div>
 
         <!--Campo imagem do Produto-->
         <div class="col form-group col-md">
-          <label for="imagemProduto">Imagem</label>
-          <input type="file" class="form-control-file" id="imagemProduto">
+          <label for="foto">Imagem</label>
+          <input type="file" class="form-control-file" id="foto" [(ngModel)]="produto.foto">
         </div>
       </div>
     </form>
@@ -47,7 +47,7 @@
 
 
 <button class="btn btn-danger" (click)="navegarParaListaProduto()">Cancelar</button>
-<button class="btn btn-success salvar">Salvar</button>
+<button class="btn btn-success salvar" (click)="save()">Salvar</button>
 
 
 

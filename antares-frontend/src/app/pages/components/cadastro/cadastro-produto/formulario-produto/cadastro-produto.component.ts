@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
+import { ApiProdutoService } from 'src/app/shared/services/api-produto.service';
+
+
 
 @Component({
   selector: 'app-cadastro-produto',
@@ -8,12 +11,29 @@ import { Router } from '@angular/router'
 })
 export class CadastroProdutoComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  produto = {codigo_sap_produto: '', nome_produto: '', descricao_produto: '', utilizacao: '', projeto: '', foto: ''}
+
+  produtos = [
+    {codigo_sap_produto: '', nome_produto: '', descricao_produto: '', utilizacao: '', projeto: '', foto: ''},
+  ];
+  constructor(private router: Router, private api: ApiProdutoService) { }
 
   ngOnInit(): void {
   }
 
+  save(){
+    this.api.saveNewProduct(this.produto).subscribe(
+      data => {
+        this.produtos.push(data);
+      },
+      error => {
+          console.log("Aconteceu um erro", error);
+      }
+    );
+  };
+
   navegarParaListaProduto(){
     this.router.navigate(['/produto/',])
   }
+
 }
