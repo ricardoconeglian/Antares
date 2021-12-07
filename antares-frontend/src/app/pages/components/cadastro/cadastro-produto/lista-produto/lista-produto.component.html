@@ -1,14 +1,16 @@
+<!--Cabeçalho da listagem de produtos-->
 <div class="card">
  <div class="card-header">
    Listagem de Produtos
-   <button class="btn btn-success btn-cadastro" (click)="navegarParaCadastroProduto()">+ Cadastrar</button>
+   <button class="btn btn-success btn-cadastro" (click)="navegarParaListaProduto()">+ Cadastrar</button>
  </div>
 
+  <!--Tabela listagem de produtos-->
   <div class="card-body">
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>#</th>
+          <th>id</th>
           <th>Codigo</th>
           <th>Nome</th>
           <th>Descrição</th>
@@ -16,12 +18,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>5012271</td>
-          <td>Placa sudmo</td>
-          <td>Placa eletronica valvula processo</td>
+        <!--loop de produto dentro do banco de dados-->
+        <tr  *ngFor="let produto of produtos">
+          <td>{{produto.id}}</td>
+          <td>{{produto.codigo_sap_produto}}</td>
+          <td>{{produto.nome_produto}}</td>
+          <td>{{produto.descricao_produto}}</td>
           <td>
+            <!--Botões editar e deletar-->
             <button class="btn btn-outline-info btn-sm btn-editar">Editar</button>
             <button class="btn btn-outline-danger btn-sm">Apagar</button>
           </td>

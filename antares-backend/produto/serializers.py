@@ -12,8 +12,8 @@ class CadastroProdutosSerializer(serializers.ModelSerializer):
             'nome_produto',
             'descricao_produto',
             'utilizacao',
-            'projeto',
-            'foto'
+            #'projeto',
+            #'foto'
         )
 
 # Serialização do cadastro de lista tecnica, transformando todos os campos em JSON

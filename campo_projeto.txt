@@ -1,0 +1,14 @@
+<div class="row margin-left">
+        <!--Campo projeto do Produto-->
+        <div class="col form-group col-md">
+          <label for="projeto">Projeto</label>
+          <input type="file" class="form-control-file" id="projeto" [(ngModel)]="produto.projeto">
+        </div>
+
+        <!--Campo imagem do Produto-->
+        <div class="col form-group col-md">
+          <label for="foto">Imagem</label>
+          <input type="file" class="form-control-file" id="foto" [(ngModel)]="produto.foto">
+        </div>
+
+      </div>

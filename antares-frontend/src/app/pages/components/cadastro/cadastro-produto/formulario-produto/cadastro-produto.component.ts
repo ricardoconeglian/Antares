@@ -11,8 +11,10 @@ import { ApiProdutoService } from 'src/app/shared/services/api-produto.service';
 })
 export class CadastroProdutoComponent implements OnInit {
 
+  // Lista que recebe os valores vindos dos campos de cadastro do HTML
   produto = {codigo_sap_produto: '', nome_produto: '', descricao_produto: '', utilizacao: '', projeto: '', foto: ''}
 
+  //Lista de produtos que será enviado para o banco de dados
   produtos = [
     {codigo_sap_produto: '', nome_produto: '', descricao_produto: '', utilizacao: '', projeto: '', foto: ''},
   ];
@@ -21,6 +23,7 @@ export class CadastroProdutoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Salva o novo cadastro no banco de dados
   save(){
     this.api.saveNewProduct(this.produto).subscribe(
       data => {
@@ -30,8 +33,10 @@ export class CadastroProdutoComponent implements OnInit {
           console.log("Aconteceu um erro", error);
       }
     );
+    this.navegarParaListaProduto()
   };
 
+  //Retorna para a tela lista produto
   navegarParaListaProduto(){
     this.router.navigate(['/produto/',])
   }

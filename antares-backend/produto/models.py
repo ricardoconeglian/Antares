@@ -18,8 +18,8 @@ class CadastroProdutos(Base):
     nome_produto = models.CharField(max_length= 150)
     descricao_produto = models.TextField(max_length=300)
     utilizacao = models.CharField(max_length=100)
-    projeto = models.FileField(upload_to='projeto/', blank=True, null=True)
-    foto = models.ImageField(upload_to='foto/', blank=True, null=True)
+   # projeto = models.FileField(upload_to='projeto/', blank=True, null=True)
+   # foto = models.ImageField(upload_to='foto/', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Cadastro Produto'

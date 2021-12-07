@@ -7,11 +7,13 @@ import { ListaProdutoComponent } from './lista-produto/lista-produto.component';
 
 const routes: Routes = [
   {
+    //Rota para a tela listagem de produtos
     path: "",
     component: ListaProdutoComponent
   },
 
   {
+    //Rota para a tela de cadastro de produto
     path: 'cadastro-produto',
     component: CadastroProdutoComponent
   }
