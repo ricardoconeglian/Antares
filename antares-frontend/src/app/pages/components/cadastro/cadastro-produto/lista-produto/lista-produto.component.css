@@ -14,6 +14,11 @@
   margin-top: 25px;
 }
 
+.table-overflow {
+  max-height:400px;
+  overflow-y:auto;
+}
+
 .btn-editar{
   margin-right: 10px;
 }

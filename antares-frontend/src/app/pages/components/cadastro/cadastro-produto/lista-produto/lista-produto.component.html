@@ -7,30 +7,33 @@
 
   <!--Tabela listagem de produtos-->
   <div class="card-body">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>Codigo</th>
-          <th>Nome</th>
-          <th>Descrição</th>
-          <th>Ação</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!--loop de produto dentro do banco de dados-->
-        <tr  *ngFor="let produto of produtos">
-          <td>{{produto.id}}</td>
-          <td>{{produto.codigo_sap_produto}}</td>
-          <td>{{produto.nome_produto}}</td>
-          <td>{{produto.descricao_produto}}</td>
-          <td>
-            <!--Botões editar e deletar-->
-            <button class="btn btn-outline-info btn-sm btn-editar">Editar</button>
-            <button class="btn btn-outline-danger btn-sm">Apagar</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <!--Coloca a barra de rolagem na tabela-->
+    <div class="table-overflow">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Codigo</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--loop de produto dentro do banco de dados-->
+          <tr  *ngFor="let produto of produtos">
+            <td>{{produto.id}}</td>
+            <td>{{produto.codigo_sap_produto}}</td>
+            <td>{{produto.nome_produto}}</td>
+            <td>{{produto.descricao_produto}}</td>
+            <td>
+              <!--Botões editar e deletar-->
+              <button class="btn btn-outline-info btn-sm btn-editar">Editar</button>
+              <button class="btn btn-outline-danger btn-sm">Apagar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
