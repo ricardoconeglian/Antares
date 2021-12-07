@@ -1,45 +1,56 @@
-<mat-card>
-  <mat-card-title>Novo Produto</mat-card-title>
+<div class="card">
+  <div class="card-header">
+    Cadastro Produto
+  </div>
+  <div class="card-body">
+    <form>
+      <!--Campo código SAP-->
+      <div class="form-group col-md-3">
+        <label for="codigoSap">Código SAP</label>
+        <input type="text" class="form-control" id="codigoSap">
+      </div>
 
-  <form>
-    <div class="row">
-      <mat-form-field appearance="outline" class="col-md-4">
-        <mat-label>Código SAP</mat-label>
-        <input matInput  name='codigo-sap'>
-      </mat-form-field>
-   </div>
+      <!--Campo nome do Produto-->
+      <div class="form-group col-md">
+        <label for="nomeProduto">Nome do Produto</label>
+        <input type="text" class="form-control" id="nomeProduto">
+      </div>
 
-   <div class="row">
-      <mat-form-field appearance="outline" class="col-md">
-        <mat-label>Nome do Produto</mat-label>
-        <input matInput  name='nome-produto'>
-      </mat-form-field>
-    </div>
+      <!--Campo descrição do Produto-->
+      <div class="form-group col-md">
+        <label for="descriçãoProduto">Descrição do Produto</label>
+        <input type="text" class="form-control" id="descriçãoProduto">
+      </div>
 
-    <div class="row">
-      <mat-form-field appearance="outline" class="col-md">
-        <mat-label>Descrição</mat-label>
-        <input matInput  name='descricao-produto'>
-      </mat-form-field>
-    </div>
+      <!--Campo utilização do Produto-->
+      <div class="form-group col-md">
+        <label for="utilizaçãoProduto">Utilização do Produto</label>
+        <input type="text" class="form-control" id="utilizaçãoProduto">
+      </div>
 
-    <div class="row">
-      <mat-form-field appearance="outline" class="col-md-4">
-        <mat-label>Utilização</mat-label>
-        <input matInput  name='descricao-produto'>
-      </mat-form-field>
-    </div>
+      <div class="row margin-left">
+        <!--Campo projeto do Produto-->
+        <div class="col form-group col-md">
+          <label for="projetoProduto">Projeto</label>
+          <input type="file" class="form-control-file" id="projetoProduto">
+        </div>
 
-    <div class="row">
-      <mat-form-field appearance="outline">
-        <mat-label>Projeto</mat-label>
-        <input matInput  name='descricao-produto'>
-        <a><mat-icon matSuffix>sentiment_very_satisfied</mat-icon></a>
-      </mat-form-field>
-    </div>
-  </form>
+        <!--Campo imagem do Produto-->
+        <div class="col form-group col-md">
+          <label for="imagemProduto">Imagem</label>
+          <input type="file" class="form-control-file" id="imagemProduto">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 
 
+<button class="btn btn-danger">Cancelar</button>
+<button class="btn btn-success salvar">Salvar</button>
 
 
-</mat-card>
+
+
+
+
