@@ -1,17 +1,20 @@
-.title-span{
-  padding-top: 10px;
+
+.card-header{
+  font-size: 25px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+}
+
+.btn-cadastro{
+  float: right;
 }
 
 .table{
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
-.button-cadastro{
-  position: fixed;
-  right: 50px;
-  top: 81px;
+.btn-editar{
+  margin-right: 10px;
 }
 
-.mat-fab{
-  background-color: #5cb85c;
-}
