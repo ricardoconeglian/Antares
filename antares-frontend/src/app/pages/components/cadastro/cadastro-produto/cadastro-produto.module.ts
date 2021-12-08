@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 
 
+
 @NgModule({
   declarations: [
     ListaProdutoComponent,
@@ -24,7 +25,8 @@ import {MatInputModule} from '@angular/material/input';
     MatIconModule,
     MatFormFieldModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+
 
   ],
   exports:[
@@ -33,7 +35,8 @@ import {MatInputModule} from '@angular/material/input';
     MatIconModule,
     MatFormFieldModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    
   ]
 })
 export class CadastroProdutoModule { }

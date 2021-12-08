@@ -3,12 +3,15 @@ import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiProdutoService } from 'src/app/shared/services/api-produto.service';
 
+
 @Component({
   selector: 'app-lista-produto',
   templateUrl: './lista-produto.component.html',
   styleUrls: ['./lista-produto.component.css']
 })
 export class ListaProdutoComponent implements OnInit {
+
+ 
 
   //Array que recebera os produtos vindos do banco de dados
   produtos = [
