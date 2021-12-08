@@ -11,7 +11,7 @@ import { ApiProdutoService } from 'src/app/shared/services/api-produto.service';
 })
 export class ListaProdutoComponent implements OnInit {
 
- 
+
 
   //Array que recebera os produtos vindos do banco de dados
   produtos = [
@@ -44,7 +44,7 @@ export class ListaProdutoComponent implements OnInit {
 
   //Navega de volta para a tela de listagem de produtos
   navegarParaListaProduto(){
-    this.router.navigate(['/produto/cadastro-produto',])
+    this.router.navigate(['/produto/cadastro-produto/new',])
   }
 
 

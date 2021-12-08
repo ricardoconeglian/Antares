@@ -1,7 +1,8 @@
-<div class="card">
-  <div class="card-header">
-    Cadastro Produto
-  </div>
+
+<!--Faz a chamada do componente card-header pois ele troca quando é cadastro ou alteração-->
+<app-card-header card-header-title="Cadastro Produto">
+
+</app-card-header>
   <div class="card-body">
     <form formGroup="produtoForm">
       <!--Campo código SAP-->
@@ -31,7 +32,6 @@
 
     </form>
   </div>
-</div>
 
 <!--Botões salvar e cancelar-->
 <button class="btn btn-danger" (click)="navegarParaListaProduto()">Cancelar</button>

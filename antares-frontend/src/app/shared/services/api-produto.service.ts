@@ -20,7 +20,7 @@ export class ApiProdutoService {
 
   //Busca o produto por ID, usado em Update e Delete
   getProduct(id:any) : Observable<any>{
-    return this.http.get(this.baseUrl + 'produto/' + id + '/',
+    return this.http.get(this.baseUrl + 'produto/cadastro-produto/' + id + '/',
     {headers: this.httpHeaders});
 
   }

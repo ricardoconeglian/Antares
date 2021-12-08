@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedRoutingModule } from './shared-routing.module';
+import { CardHeaderComponent } from './components/card-header/card-header.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CardHeaderComponent
+  ],
   imports: [
     CommonModule,
     SharedRoutingModule,
@@ -13,7 +16,8 @@ import { SharedRoutingModule } from './shared-routing.module';
 
   ],
   exports:[
-    HttpClientModule
+    HttpClientModule,
+    CardHeaderComponent
   ],
   providers: [
 

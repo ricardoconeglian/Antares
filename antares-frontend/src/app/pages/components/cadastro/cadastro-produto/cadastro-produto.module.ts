@@ -1,3 +1,4 @@
+
 import { ListaProdutoComponent } from './lista-produto/lista-produto.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,6 +10,7 @@ import { CadastroProdutoRoutingModule, } from './cadastro-produto-routing.module
 import { CadastroProdutoComponent } from './formulario-produto/cadastro-produto.component';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -26,6 +28,8 @@ import {MatInputModule} from '@angular/material/input';
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
+    SharedModule
+
 
 
   ],
@@ -36,7 +40,7 @@ import {MatInputModule} from '@angular/material/input';
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
-    
+
   ]
 })
 export class CadastroProdutoModule { }

@@ -1,0 +1,10 @@
+.card-header{
+  font-size: 25px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+}
+
+.btn-cadastro{
+  float: right;
+}
