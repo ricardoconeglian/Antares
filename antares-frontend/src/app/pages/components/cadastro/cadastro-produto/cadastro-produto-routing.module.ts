@@ -16,6 +16,12 @@ const routes: Routes = [
     //Rota para a tela de cadastro de produto
     path: 'cadastro-produto/new',
     component: CadastroProdutoComponent
+  },
+
+  {
+    // Rota para edição de produtos
+    path: ":id/edit",
+    component: CadastroProdutoComponent
   }
 ];
 

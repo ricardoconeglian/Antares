@@ -1,5 +1,6 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router'
+import { FormGroup } from '@angular/forms';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router'
 import { ApiProdutoService } from 'src/app/shared/services/api-produto.service';
 
 
@@ -10,6 +11,8 @@ import { ApiProdutoService } from 'src/app/shared/services/api-produto.service';
   styleUrls: ['./cadastro-produto.component.css']
 })
 export class CadastroProdutoComponent implements OnInit {
+
+
 
   //define se está crindo ou editando um produto
   currentAction: string | undefined;
@@ -26,32 +29,62 @@ export class CadastroProdutoComponent implements OnInit {
   produtos = [
     {codigo_sap_produto: '', nome_produto: '', descricao_produto: '', utilizacao: '', projeto: '', foto: ''},
   ];
+
+
+
   constructor(
-    private router: Router,
-    private api: ApiProdutoService,
+    protected router: Router,
+    protected api: ApiProdutoService,
     protected injector: Injector,
+
+
     ) {
     this.route = this.injector.get(ActivatedRoute); //Injeção de dependencia da rota
    }
 
   ngOnInit(): void {
     this.setCurrentAction() // Roda função ao inicializar a tela
+    //Pega o numero do id vindo da URL e passa como parametro no função carregaProduto()
+    this.route.paramMap.subscribe((param: ParamMap) => {
+      let id = parseInt(param.get('id') || '{}');
+      this.carregaProduto(id)
+    })
   }
 
   ngAfterContentChecked(): void {
     this.setTituloPagina(); // Monitora constantemente se houve alteração cadastrar/editar
   }
 
-  //Salva o novo cadastro no banco de dados
+  /**-------------------------------------------------------------------------------------
+   * Criar e alterar cadastro de produtos
+    --------------------------------------------------------------------------------------
+  */
+
+  //Salva o novo cadastro ou altera o cadastro no banco de dados
   save(){
-    this.api.saveNewProduct(this.produto).subscribe(
-      data => {
-        this.produtos.push(data);
-      },
-      error => {
+    // se for um novo cadastro de produto usa essa instrução
+    if(this.currentAction == 'new'){
+      this.api.saveNewProduct(this.produto).subscribe(
+        data => {
+          this.produtos.push(data);
+        },
+        error => {
+            console.log("Aconteceu um erro", error);
+        }
+      );
+    }
+    //se for uma alteração de cadastro usa essa instrução
+    else{
+      this.api.updateProduct(this.produto).subscribe(
+        data => {
+          this.produto = data;
+        },
+        error => {
           console.log("Aconteceu um erro", error);
       }
-    );
+      )
+    }
+    //retorna para a tela lista produtos
     this.navegarParaListaProduto()
   };
 
@@ -60,9 +93,25 @@ export class CadastroProdutoComponent implements OnInit {
     this.router.navigate(['/produto/',])
   }
 
-  
-  //Metodos privados
+  //Carrega os dados do produto por id para edição
+  carregaProduto(id:any) {
+    if(this.currentAction == 'edit')
+      this.api.getProduct(id).subscribe(
+        data => {
+          this.produto = data;
+        },
+        error => {
+          console.log("Aconteceu um erro", error);
+        }
+      )
+  }
 
+
+
+  /* --------------------------------------------------------
+        Metodos privados
+    ---------------------------------------------------------
+  */
   //Recebe do browser a URL para identificar se está sendo feito a criação ou edição
   protected setCurrentAction(){
     if(this.route.snapshot.url[1].path == "new")
@@ -85,8 +134,9 @@ export class CadastroProdutoComponent implements OnInit {
   }
 
   protected editarTituloPagina(): string{
-   // const categoryName = this.resource.name || "";
-    return "Editar Produto " //+ categoryName // Escreve a string no titulo quando é edição
+    const nomeProduto = this.produto.nome_produto || "";
+    return "Editar Produto: " + nomeProduto // Escreve a string no titulo quando é edição
   }
 
 }
+

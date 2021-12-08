@@ -33,16 +33,16 @@ export class ApiProdutoService {
   }
 
   // Altera o produto
-  updateProduct(product:any) : Observable<any>{
-    let body = {name: product.name, surname: product.surname, phone: product.phone};
-    return this.http.put(this.baseUrl + 'produto/cadastro-produto/' + product.id + '/', body,
+  updateProduct(produto:any) : Observable<any>{
+    // body é o corpo com os dados alterados do JSON, precisa dele para funcionar
+    let body = {codigo_sap_produto: produto.codigo_sap_produto, nome_produto: produto.nome_produto, descricao_produto: produto.descricao_produto, utilizacao: produto.utilizacao}
+    return this.http.put(this.baseUrl + 'produto/cadastro-produto/' + produto.id + '/', body,
     {headers: this.httpHeaders});
-
   }
 
   // deleta o produto
-  deleteProduct(id:any) : Observable<any>{
-    return this.http.delete(this.baseUrl + 'produto/cadastro-produto/' + id + '/',
+  deleteProduct(produto:any) : Observable<any>{
+    return this.http.delete(this.baseUrl + 'produto/cadastro-produto/' + produto.id + '/',
     {headers: this.httpHeaders});
   }
 }

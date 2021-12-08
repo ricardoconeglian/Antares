@@ -30,7 +30,7 @@
             <td>
               <!--Botões editar e deletar-->
               <button class="btn btn-outline-info btn-sm btn-editar" [routerLink]="[produto.id, 'edit']">Editar</button>
-              <button class="btn btn-outline-danger btn-sm">Apagar</button>
+              <button class="btn btn-outline-danger btn-sm" (click)="delete(produto)">Apagar</button>
 
             </td>
           </tr>
