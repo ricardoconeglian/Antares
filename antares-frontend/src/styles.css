@@ -14,3 +14,23 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .v-middle{
   vertical-align: middle;
 }
+
+
+.green-snackbar {
+  background: #5cb85c;
+  color: white;
+}
+.green-snackbar button {
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+}
+.red-snackbar {
+  background: #F44336;
+  color: white;
+}
+.red-snackbar button {
+  background-color: #F44336;
+  color: white;
+  border: none;
+}

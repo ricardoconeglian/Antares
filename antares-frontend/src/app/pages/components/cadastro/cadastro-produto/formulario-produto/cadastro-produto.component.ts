@@ -2,6 +2,7 @@ import { Component, Injector, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router'
 import { ApiProdutoService } from 'src/app/shared/services/api-produto.service';
+import { MessagesService } from 'src/app/shared/services/messages.service';
 
 
 
@@ -36,6 +37,7 @@ export class CadastroProdutoComponent implements OnInit {
     protected router: Router,
     protected api: ApiProdutoService,
     protected injector: Injector,
+    protected messagesService: MessagesService,
 
 
     ) {
@@ -67,6 +69,9 @@ export class CadastroProdutoComponent implements OnInit {
       this.api.saveNewProduct(this.produto).subscribe(
         data => {
           this.produtos.push(data);
+          this.messagesService.showMessageSuccess("Produto criado com sucesso!")
+          //retorna para a tela lista produtos
+          this.navegarParaListaProduto()
         },
         error => {
             console.log("Aconteceu um erro", error);
@@ -78,14 +83,16 @@ export class CadastroProdutoComponent implements OnInit {
       this.api.updateProduct(this.produto).subscribe(
         data => {
           this.produto = data;
+          this.messagesService.showMessageSuccess("Produto alterado com sucesso!")
+          //retorna para a tela lista produtos
+          this.navegarParaListaProduto()
         },
         error => {
           console.log("Aconteceu um erro", error);
       }
       )
     }
-    //retorna para a tela lista produtos
-    this.navegarParaListaProduto()
+    
   };
 
   //Retorna para a tela lista produto
