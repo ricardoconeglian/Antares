@@ -31,11 +31,14 @@ export class ListaProdutoComponent implements OnInit {
       this.route = this.injector.get(ActivatedRoute); //Injeção de dependencia da rota
     }
 
+
+
   ngOnInit(): void {
      //Pega o numero do id vindo da URL e passa como parametro no função carregaProduto()
       this.route.paramMap.subscribe((param: ParamMap) => {
       let id = parseInt(param.get('id') || '{}');
       this.selected_id = id;
+      this.carregarProdutos() //carrega todos os produtos na tabela toda vez que inicializa a pagina
 
     })
   }
