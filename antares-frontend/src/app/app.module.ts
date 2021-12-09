@@ -8,11 +8,13 @@ import {BrowserModule} from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { TipoManufaturaComponent } from './pages/components/manufatura/tipo-manufatura/tipo-manufatura.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    TipoManufaturaComponent,
   ],
   imports: [
     AppRoutingModule,
