@@ -12,7 +12,7 @@ const routes: Routes = [
 
   {
     //Rota para a tela de cadastro de tipo de manufatura
-    path: 'tipo-manufatura/new',
+    path: 'cadastro-tipo-manufatura/new',
     component: FormTipoManufaturaComponent
   },
 
