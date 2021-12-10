@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TipoManufaturaComponent } from './tipo-manufatura.component';
+import { FormTipoManufaturaComponent } from './form-tipo-manufatura.component';
 
-describe('TipoManufaturaComponent', () => {
-  let component: TipoManufaturaComponent;
-  let fixture: ComponentFixture<TipoManufaturaComponent>;
+describe('FormTipoManufaturaComponent', () => {
+  let component: FormTipoManufaturaComponent;
+  let fixture: ComponentFixture<FormTipoManufaturaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TipoManufaturaComponent ]
+      declarations: [ FormTipoManufaturaComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TipoManufaturaComponent);
+    fixture = TestBed.createComponent(FormTipoManufaturaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
