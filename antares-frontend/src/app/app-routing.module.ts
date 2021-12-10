@@ -12,8 +12,8 @@ const routes: Routes = [
 
   {
     //Rota para a chamada de cadastro de tipo manufatura. Depois ela entra para o manufatura-routing module
-    path: "produto",
-    loadChildren: () => import('./pages/components/cadastro/cadastro-produto/cadastro-produto.module').then(m => m.CadastroProdutoModule)
+    path: "manufatura",
+    loadChildren: () => import('./pages/components/cadastro/cadastro-manufatura/cadastro-manufatura.module').then(m => m.ManufaturaModule)
   },
 
 ];
