@@ -1,0 +1,28 @@
+.card-header{
+  font-size: 25px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 8px;
+}
+
+.form-control:focus{
+  border-color: #D9CB04;
+  box-shadow: 0 0 0 0.2rem rgba(217,203,4,0.25);
+}
+
+.margin-left{
+  margin-left: 4px;
+}
+
+.btn{
+  float: right;
+  margin-top: 15px;
+  position: right;
+}
+.salvar{
+  margin-right: 10px;
+}

@@ -29,8 +29,8 @@ export class ApiTipoManufaturaService {
   }
 
   //Salva novo tipo manufatura no banco de dados
-  saveNewManuType(manuType:any) : Observable<any>{
-    return this.http.post(this.baseUrl + 'manufatura/cadastro-tipo-manufatura', manuType,
+  saveNewManuType(tipoManufatura:any) : Observable<any>{
+    return this.http.post(this.baseUrl + 'manufatura/cadastro-tipo-manufatura', tipoManufatura,
     {headers: this.httpHeaders});
 
   }

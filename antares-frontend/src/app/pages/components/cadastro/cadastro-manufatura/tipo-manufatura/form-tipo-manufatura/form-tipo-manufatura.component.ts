@@ -1,4 +1,4 @@
-import { TipoManufatura } from './../../../../../../shared/models/tipo-manufatura.model';
+
 import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
@@ -21,8 +21,10 @@ export class FormTipoManufaturaComponent implements OnInit {
   protected route: ActivatedRoute;
 
 
-  tipoManufatura = {id: '', tipo_manufatura: ''}
-  tipoManufaturas!: TipoManufatura[]
+  tipoManufatura = { tipo_manufatura: ''}
+  tipoManufaturas = [
+    { tipo_manufatura: ''},
+  ]
 
 
 
@@ -91,7 +93,7 @@ export class FormTipoManufaturaComponent implements OnInit {
 
   //Retorna para a tela lista tipo manufatura
   navegarParaListaTipoManufatura(){
-    this.router.navigate(['/tipo-manufatura/',])
+    this.router.navigate(['/manufatura/',])
   }
 
   //Carrega os dados do tipo manufatura por id para edição
@@ -115,7 +117,8 @@ export class FormTipoManufaturaComponent implements OnInit {
   */
   //Recebe do browser a URL para identificar se está sendo feito a criação ou edição
   protected setCurrentAction(){
-    if(this.route.snapshot.url[1].path == "new")
+
+    if(this.route.snapshot.url[2].path == "new")
       this.currentAction = "new"
     else
       this.currentAction = "edit"
