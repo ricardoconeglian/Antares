@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { ManufaturaRoutingModule } from './cadastro-tipo-manufatura-routing.module';
 import { FormTipoManufaturaComponent } from './tipo-manufatura/form-tipo-manufatura/form-tipo-manufatura.component';
 import { ListaTipoManufaturaComponent } from './tipo-manufatura/lista-tipo-manufatura/lista-tipo-manufatura.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -13,7 +16,10 @@ import { ListaTipoManufaturaComponent } from './tipo-manufatura/lista-tipo-manuf
   ],
   imports: [
     CommonModule,
-    ManufaturaRoutingModule
+    ManufaturaRoutingModule,
+    SharedModule,
+    FormsModule,
+
   ]
 })
 export class ManufaturaModule { }

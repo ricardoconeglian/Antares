@@ -17,7 +17,9 @@ import { CardHeaderComponent } from './components/card-header/card-header.compon
   ],
   exports:[
     HttpClientModule,
-    CardHeaderComponent
+    CardHeaderComponent,
+    
+
   ],
   providers: [
 

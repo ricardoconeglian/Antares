@@ -12,7 +12,7 @@ const routes: Routes = [
 
   {
     //Rota para a chamada de cadastro de tipo manufatura. Depois ela entra para o manufatura-routing module
-    path: "tipo-manufatura",
+    path: "manufatura",
     loadChildren: () => import('./pages/components/cadastro/cadastro-manufatura/cadastro-tipo-manufatura.module').then(m => m.ManufaturaModule)
   },
 

@@ -1,1 +1,23 @@
-<p>form-tipo-manufatura works!</p>
+<!--Faz a chamada do componente card-header pois ele troca quando é cadastro ou alteração-->
+<app-card-header
+ card-header-title={{tituloPagina}}>
+</app-card-header>
+
+
+  <div class="card-body">
+    <form formGroup="tipoManufaturaForm">
+
+
+     <!--Campo tipo manufatura-->
+      <div class="form-group col-md">
+        <label for="tipo_manufatura">Tipo Manufatura</label>
+        <input type="text" class="form-control" id="tipo_manufatura" [(ngModel)]="tipoManufatura.tipo_manufatura">
+      </div>
+
+    </form>
+  </div>
+
+<!--Botões salvar e cancelar-->
+<button class="btn btn-danger" (click)="navegarParaListaTipoManufatura()">Cancelar</button>
+<button class="btn btn-success salvar" (click)="save()">Salvar</button>
+

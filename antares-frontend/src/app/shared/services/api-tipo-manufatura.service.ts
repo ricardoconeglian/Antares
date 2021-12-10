@@ -17,20 +17,20 @@ export class ApiTipoManufaturaService {
 
   //Busca todos os produtos no banco de dados
   getAllManuType(): Observable<any>{
-    return this.http.get(this.baseUrl + 'manufatura/tipo-manufatura',
+    return this.http.get(this.baseUrl + 'manufatura/cadastro-tipo-manufatura',
     {headers: this.httpHeaders})
   }
 
   //Busca o tipo manufatura por ID, usado em Update e Delete
   getManuType(id:any) : Observable<any>{
-    return this.http.get(this.baseUrl + 'manufatura/tipo-manufatura' + id + '/',
+    return this.http.get(this.baseUrl + 'manufatura/cadastro-tipo-manufatura' + id + '/',
     {headers: this.httpHeaders});
 
   }
 
   //Salva novo tipo manufatura no banco de dados
   saveNewManuType(manuType:any) : Observable<any>{
-    return this.http.post(this.baseUrl + 'manufatura/tipo-manufatura', manuType,
+    return this.http.post(this.baseUrl + 'manufatura/cadastro-tipo-manufatura', manuType,
     {headers: this.httpHeaders});
 
   }
@@ -39,13 +39,13 @@ export class ApiTipoManufaturaService {
   updateManuType(manuType:any) : Observable<any>{
     // body é o corpo com os dados alterados do JSON, precisa dele para funcionar
     let body = {tipo_manufatura: manuType.tipo_manufatura}
-    return this.http.put(this.baseUrl + 'manufatura/tipo-manufatura' + manuType.id + '/', body,
+    return this.http.put(this.baseUrl + 'manufatura/cadastro-tipo-manufatura' + manuType.id + '/', body,
     {headers: this.httpHeaders});
   }
 
   // deleta o tipo manufatura
   deleteManuType(manuType:any) : Observable<any>{
-    return this.http.delete(this.baseUrl + 'manufatura/tipo-manufatura' + manuType.id + '/',
+    return this.http.delete(this.baseUrl + 'manufatura/cadastro-tipo-manufatura' + manuType.id + '/',
     {headers: this.httpHeaders});
   }
 
