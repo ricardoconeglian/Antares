@@ -5,7 +5,13 @@ import { RouterModule, Routes } from '@angular/router';
 // Rotas da tela de cadastros
 const routes: Routes = [
   {
-    //Rota para a chamada de cadastro de produtos. Depois ela entra papra o cadastro-produto-routing module
+    //Rota para a chamada de cadastro de produtos. Depois ela entra para o cadastro-produto-routing module
+    path: "produto",
+    loadChildren: () => import('./pages/components/cadastro/cadastro-produto/cadastro-produto.module').then(m => m.CadastroProdutoModule)
+  },
+
+  {
+    //Rota para a chamada de cadastro de tipo manufatura. Depois ela entra para o manufatura-routing module
     path: "produto",
     loadChildren: () => import('./pages/components/cadastro/cadastro-produto/cadastro-produto.module').then(m => m.CadastroProdutoModule)
   },
