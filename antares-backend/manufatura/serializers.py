@@ -16,7 +16,6 @@ class ModoManufaturaSerializer(serializers.ModelSerializer):
         model = ModoManufatura
         fields = (
             'id',
-            'tipo_manufatura', 
             'modo_manufatura'          
         )
 

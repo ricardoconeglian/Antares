@@ -11,7 +11,7 @@ class TipoManufaturaAdmin(admin.ModelAdmin):
 # Mostra campos no Django Admin de modo manufatura
 @admin.register(ModoManufatura)
 class ModoManufaturaAdmin(admin.ModelAdmin):
-    list_display = ('tipo_manufatura', 'modo_manufatura')
+    list_display = ('modo_manufatura',)
 
 # Mostra campos no Django Admin de execução manufatura
 @admin.register(ExecucaoManufatura)

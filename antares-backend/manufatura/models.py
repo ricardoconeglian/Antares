@@ -25,7 +25,6 @@ class TipoManufatura(Base):
 
 # Tabela para o modo manufatura. Especifica se é 3D, CNC ou placa eletronica
 class ModoManufatura(Base):
-    tipo_manufatura = models.ForeignKey(TipoManufatura, related_name='modotipomanufatura', on_delete=models.CASCADE)
     modo_manufatura = models.CharField(max_length=100)
 
     class Meta:
