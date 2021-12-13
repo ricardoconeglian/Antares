@@ -22,6 +22,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/components/cadastro/modo-manufatura/modo-manufatura.module').then(m => m.ModoManufaturaModule)
   },
 
+  {
+    //Rota para a chamada de cadastro de unidade de engenharia. Depois ela entra para o unidade-engenharia-routing module
+    path: "unidade-engenharia",
+    loadChildren: () => import('./pages/components/cadastro/unidade-engenharia/unidade-engenharia.module').then(m => m.UnidadeEngenhariaModule)
+  },
+
 ];
 
 @NgModule({

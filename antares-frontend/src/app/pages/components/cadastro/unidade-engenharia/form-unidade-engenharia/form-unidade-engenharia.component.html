@@ -1,0 +1,30 @@
+<!--Faz a chamada do componente card-header pois ele troca quando é cadastro ou alteração-->
+<app-card-header
+ card-header-title={{tituloPagina}}>
+</app-card-header>
+
+
+  <div class="card-body">
+    <form formGroup="unidadeEngenhariaForm">
+
+
+     <!--Campo descrição unidade engenharia-->
+      <div class="form-group col-md">
+        <label for="descricao">Descrição Unidade de Engenharia</label>
+        <input type="text" class="form-control" id="descricao" [(ngModel)]="unidadeEngenharia.descricao" autocomplete="off">
+      </div>
+
+      <!--Campo unidade engenharia-->
+      <div class="form-group col-md">
+        <label for="unidade">Unidade de Engenharia</label>
+        <input type="text" class="form-control" id="unidade" [(ngModel)]="unidadeEngenharia.unidade" autocomplete="off">
+      </div>
+
+    </form>
+  </div>
+
+<!--Botões salvar e cancelar-->
+<button class="btn btn-danger" (click)="navegarParaListaUnidadeEngenharia()">Cancelar</button>
+<button class="btn btn-success salvar" (click)="save()">Salvar</button>
+
+

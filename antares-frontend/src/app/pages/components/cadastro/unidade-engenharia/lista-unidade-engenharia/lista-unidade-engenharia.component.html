@@ -1,0 +1,40 @@
+<!--Cabeçalho da listagem de unidade de engenharia-->
+<div class="card">
+  <div class="card-header">
+    Listagem de Unidade de Engenharia
+    <button class="btn btn-success btn-cadastro" (click)="navegarParaCadastraUnidadeEngenharia()">+ Cadastrar</button>
+  </div>
+
+
+  <!--Tabela listagem de unidade de engenharia-->
+  <div class="card-body">
+    <!--Coloca a barra de rolagem na tabela-->
+    <div class="table-overflow">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Descrição</th>
+            <th>Unidade Engenharia</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--loop de unidade de engenharia dentro do banco de dados para mostrar na tabela-->
+          <tr  *ngFor="let unidade of unidadeEngenharias">
+            <td>{{unidade.id}}</td>
+            <td>{{unidade.descricao}}</td>
+            <td>{{unidade.unidade}}</td>
+            <td>
+              <!--Botões editar e deletar-->
+              <button class="btn btn-outline-info btn-sm btn-editar" [routerLink]="['cadastro-unidade-engenharia/',unidade.id, 'edit']">Editar</button>
+              <button class="btn btn-outline-danger btn-sm" (click)="delete(unidade)">Apagar</button>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
