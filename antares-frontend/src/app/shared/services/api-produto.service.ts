@@ -10,6 +10,8 @@ export class ApiProdutoService {
   baseUrl = "http://127.0.0.1:8000/";
   //Monta o cabeçalho do HTTP a ser enviado
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json')
+
+  
   constructor(private http: HttpClient) { }
 
   //Busca todos os produtos no banco de dados

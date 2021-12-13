@@ -1,0 +1,36 @@
+<!--Cabeçalho da listagem de tipo de manufatura-->
+<div class="card">
+  <div class="card-header">
+    Listagem de Tipo de Manufatura
+    <button class="btn btn-success btn-cadastro" (click)="navegarParaCadastraTipoManufatura()">+ Cadastrar</button>
+  </div>
+
+
+  <!--Tabela listagem de tipo de manufatura-->
+  <div class="card-body">
+    <!--Coloca a barra de rolagem na tabela-->
+    <div class="table-overflow">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Tipo Manufatura</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--loop de tipo de manufatura dentro do banco de dados para mostrar na tabela-->
+          <tr  *ngFor="let tipo of tipoManufaturas">
+            <td>{{tipo.id}}</td>
+            <td>{{tipo.tipo_manufatura}}</td>
+            <td>
+              <!--Botões editar e deletar-->
+              <button class="btn btn-outline-info btn-sm btn-editar" [routerLink]="['tipo-manufatura/cadastro-tipo-manufatura/',tipo.id, 'edit']">Editar</button>
+              <button class="btn btn-outline-danger btn-sm" (click)="delete(tipo)">Apagar</button>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

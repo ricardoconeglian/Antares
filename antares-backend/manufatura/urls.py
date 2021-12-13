@@ -4,7 +4,7 @@ from .views import TipoManufaturaViewSet, ModoManufaturaViewSet, ExecucaoManufat
 
 # Rotas padrão para a aplicação
 router_manufatura= SimpleRouter()
-router_manufatura.register('tipomanufatura', TipoManufaturaViewSet)
-router_manufatura.register('modomanufatura', ModoManufaturaViewSet)
-router_manufatura.register('execucaomanufatura', ExecucaoManufaturaViewSet)
+router_manufatura.register('cadastro-tipo-manufatura', TipoManufaturaViewSet)
+router_manufatura.register('modo-manufatura', ModoManufaturaViewSet)
+router_manufatura.register('execucao-manufatura', ExecucaoManufaturaViewSet)
 
