@@ -17,3 +17,8 @@ class UnidadeEngenhariaViewSet(viewsets.ModelViewSet):
 class EstoqueInsumoViewSet(viewsets.ModelViewSet):
     queryset = EstoqueInsumo.objects.all()
     serializer_class = EstoqueInsumoSerializer
+
+    #def quantidadeEstoque(self, queryset):
+     #   estoque = queryset.valor_unitario
+      #  total = queryset.valor_total
+       # balanco = estoque * total
