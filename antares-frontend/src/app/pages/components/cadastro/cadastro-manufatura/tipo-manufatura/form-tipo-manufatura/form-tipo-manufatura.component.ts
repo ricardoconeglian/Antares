@@ -20,7 +20,7 @@ export class FormTipoManufaturaComponent implements OnInit {
 
   protected route: ActivatedRoute;
 
-
+  //Array que recebe os valores de input dos dados para envio ao banco de dados
   tipoManufatura = { tipo_manufatura: ''}
   tipoManufaturas = [
     { tipo_manufatura: ''},
@@ -46,7 +46,7 @@ export class FormTipoManufaturaComponent implements OnInit {
     this.route.paramMap.subscribe((param: ParamMap) => {
       let id = parseInt(param.get('id') || '{}');
       this.carregaTipoManufatura(id)
-      
+
     })
   }
 
@@ -135,11 +135,12 @@ export class FormTipoManufaturaComponent implements OnInit {
   }
 
   protected criarTituloPagina(): string{
-    return "Cadastro de Produto" // Escreve a string no titulo quando é cadastro
+    return "Cadastro de Tipo Manufatura" // Escreve a string no titulo quando é cadastro
   }
 
   protected editarTituloPagina(): string{
-    const nomeTipoManufatura = this.tipoManufatura || "";
+    const nomeTipoManufatura = this.tipoManufatura.tipo_manufatura || "";
+
     return "Editar Tipo Manufatura: " + nomeTipoManufatura // Escreve a string no titulo quando é edição
   }
 

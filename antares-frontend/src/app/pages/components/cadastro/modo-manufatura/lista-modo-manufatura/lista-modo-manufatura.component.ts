@@ -54,7 +54,7 @@ export class ListaModoManufaturaComponent implements OnInit {
 
    //Navega de volta para a tela de listagem de modo manufatura
    navegarParaCadastraModoManufatura(){
-    this.router.navigate(['manufatura/modo-manufatura/cadastro-modo-manufatura/new',])
+    this.router.navigate(['modo-manufatura/cadastro-modo-manufatura/new',])
   }
 
   /*-------------------------------------------------------

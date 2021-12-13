@@ -1,1 +1,25 @@
-<p>form-modo-manufatura works!</p>
+<!--Faz a chamada do componente card-header pois ele troca quando é cadastro ou alteração-->
+<app-card-header
+ card-header-title={{tituloPagina}}>
+</app-card-header>
+
+
+  <div class="card-body">
+    <form formGroup="modoManufaturaForm">
+
+
+     <!--Campo modo manufatura-->
+      <div class="form-group col-md">
+        <label for="modo_manufatura">Modo Manufatura</label>
+        <input type="text" class="form-control" id="modo_manufatura" [(ngModel)]="modoManufatura.modo_manufatura" autocomplete="off">
+      </div>
+
+    </form>
+  </div>
+
+<!--Botões salvar e cancelar-->
+<button class="btn btn-danger" (click)="navegarParaListaModoManufatura()">Cancelar</button>
+<button class="btn btn-success salvar" (click)="save()">Salvar</button>
+
+
+
