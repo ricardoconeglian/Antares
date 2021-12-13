@@ -46,6 +46,7 @@ export class FormTipoManufaturaComponent implements OnInit {
     this.route.paramMap.subscribe((param: ParamMap) => {
       let id = parseInt(param.get('id') || '{}');
       this.carregaTipoManufatura(id)
+      
     })
   }
 

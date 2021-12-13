@@ -25,7 +25,7 @@
             <td>{{tipo.tipo_manufatura}}</td>
             <td>
               <!--Botões editar e deletar-->
-              <button class="btn btn-outline-info btn-sm btn-editar" [routerLink]="[tipo.id, 'edit']">Editar</button>
+              <button class="btn btn-outline-info btn-sm btn-editar" [routerLink]="['tipo-manufatura/cadastro-tipo-manufatura/',tipo.id, 'edit']">Editar</button>
               <button class="btn btn-outline-danger btn-sm" (click)="delete(tipo)">Apagar</button>
 
             </td>

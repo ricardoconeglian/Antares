@@ -36,7 +36,7 @@ export class ListaTipoManufaturaComponent implements OnInit {
     this.route.paramMap.subscribe((param: ParamMap) => {
       let id = parseInt(param.get('id') || '{}');
       this.selected_id = id;
-      //this.carregarTipoManufatura() //carrega todos os tipos de manufatura na tabela toda vez que inicializa a pagina
+      this.carregarTipoManufatura() //carrega todos os tipos de manufatura na tabela toda vez que inicializa a pagina
     })
   }
 

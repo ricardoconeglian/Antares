@@ -18,7 +18,7 @@ const routes: Routes = [
 
   {
     // Rota para edição de tipo de manufatura
-    path: ":id/edit",
+    path: "tipo-manufatura/cadastro-tipo-manufatura/:id/edit",
     component: FormTipoManufaturaComponent
   }
 ];
