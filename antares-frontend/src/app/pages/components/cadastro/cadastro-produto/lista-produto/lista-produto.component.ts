@@ -27,7 +27,7 @@ export class ListaProdutoComponent implements OnInit {
     private api:ApiProdutoService, //recebe as funções do Serviço APIProdutoService
     protected injector: Injector,
     ) {
-      this.carregarProdutos()
+      this.carregarProdutos() //carrega todos os produtos na tabela toda vez que inicializa a pagina
       this.route = this.injector.get(ActivatedRoute); //Injeção de dependencia da rota
     }
 
@@ -38,7 +38,7 @@ export class ListaProdutoComponent implements OnInit {
       this.route.paramMap.subscribe((param: ParamMap) => {
       let id = parseInt(param.get('id') || '{}');
       this.selected_id = id;
-      this.carregarProdutos() //carrega todos os produtos na tabela toda vez que inicializa a pagina
+      
 
     })
   }

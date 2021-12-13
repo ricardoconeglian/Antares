@@ -26,7 +26,7 @@ export class ListaTipoManufaturaComponent implements OnInit {
     private api:ApiTipoManufaturaService, //recebe as funções do Serviço APITipoManufaturaService
     protected injector: Injector) {
 
-      this.carregarTipoManufatura()
+      this.carregarTipoManufatura() //carrega todos os tipos de manufatura na tabela toda vez que inicializa a pagina
       this.route = this.injector.get(ActivatedRoute); //Injeção de dependencia da rota
 
      }
@@ -36,7 +36,7 @@ export class ListaTipoManufaturaComponent implements OnInit {
     this.route.paramMap.subscribe((param: ParamMap) => {
       let id = parseInt(param.get('id') || '{}');
       this.selected_id = id;
-      this.carregarTipoManufatura() //carrega todos os tipos de manufatura na tabela toda vez que inicializa a pagina
+    
     })
   }
 
