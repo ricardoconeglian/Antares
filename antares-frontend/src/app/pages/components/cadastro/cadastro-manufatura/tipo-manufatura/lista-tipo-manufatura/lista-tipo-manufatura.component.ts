@@ -9,7 +9,7 @@ import { ApiTipoManufaturaService } from 'src/app/shared/services/api-tipo-manuf
 })
 export class ListaTipoManufaturaComponent implements OnInit {
 
-  //Extende do model TipoManufatura criando um array com os dados
+  //Cria um array com os dados de tipo manufatura
   tipoManufatura = {id: '', tipo_manufatura: ''}
 
   //Array que recebera os produtos vindos do banco de dados
@@ -36,7 +36,7 @@ export class ListaTipoManufaturaComponent implements OnInit {
     this.route.paramMap.subscribe((param: ParamMap) => {
       let id = parseInt(param.get('id') || '{}');
       this.selected_id = id;
-    
+
     })
   }
 

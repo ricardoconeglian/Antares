@@ -16,6 +16,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/components/cadastro/cadastro-manufatura/cadastro-tipo-manufatura.module').then(m => m.ManufaturaModule)
   },
 
+  {
+    //Rota para a chamada de cadastro de modo manufatura. Depois ela entra para o manufatura-routing module
+    path: "modo-manufatura",
+    loadChildren: () => import('./pages/components/cadastro/modo-manufatura/modo-manufatura.module').then(m => m.ModoManufaturaModule)
+  },
+
 ];
 
 @NgModule({

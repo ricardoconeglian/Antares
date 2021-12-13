@@ -15,7 +15,7 @@ export class ApiTipoManufaturaService {
 
   constructor(private http: HttpClient) { }
 
-  //Busca todos os produtos no banco de dados
+  //Busca todos os tipos de manufatura no banco de dados
   getAllManuType(): Observable<any>{
     return this.http.get(this.baseUrl + 'manufatura/cadastro-tipo-manufatura',
     {headers: this.httpHeaders})
