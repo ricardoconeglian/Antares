@@ -9,8 +9,8 @@ class CadastroInsumoSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'codigo_sap_insumo', 
-            'descricao_insumo',
-            'valor_unitario'       
+            'descricao_insumo'
+                 
         )
 
 

@@ -5,7 +5,7 @@ from .models import CadastroInsumo, UnidadeEngenharia, EstoqueInsumo
 # Mostra campos no Django Admin de unidade de engenharia
 @admin.register(CadastroInsumo)
 class CadastroInsumoAdmin(admin.ModelAdmin):
-    list_display = ('codigo_sap_insumo', 'descricao_insumo', 'valor_unitario')
+    list_display = ('codigo_sap_insumo', 'descricao_insumo')
 
 # Mostra campos no Django Admin de unidade de engenharia
 @admin.register(UnidadeEngenharia)

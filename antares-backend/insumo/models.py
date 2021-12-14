@@ -14,7 +14,7 @@ class Base(models.Model):
 class CadastroInsumo(Base):
     codigo_sap_insumo = models.IntegerField(unique=True)
     descricao_insumo = models.CharField(max_length=100)
-    valor_unitario = models.DecimalField(max_digits=8, decimal_places=2)
+    
 
     class Meta:
         verbose_name = 'Cadastro Insumo'
