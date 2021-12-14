@@ -1,0 +1,40 @@
+<!--Cabeçalho da listagem de insumo-->
+<div class="card">
+  <div class="card-header">
+    Listagem de Insumos
+    <button class="btn btn-success btn-cadastro" (click)="navegarParaCadastraInsumo()">+ Cadastrar</button>
+  </div>
+
+
+  <!--Tabela listagem de insumo-->
+  <div class="card-body">
+    <!--Coloca a barra de rolagem na tabela-->
+    <div class="table-overflow">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Código SAP</th>
+            <th>Descrição</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--loop de insumo dentro do banco de dados para mostrar na tabela-->
+          <tr  *ngFor="let insumo of insumos">
+            <td>{{insumo.id}}</td>
+            <td>{{insumo.codigo_sap_insumo}}</td>
+            <td>{{insumo.descricao_insumo}}</td>
+            <td>
+              <!--Botões editar e deletar-->
+              <button class="btn btn-outline-info btn-sm btn-editar" [routerLink]="['cadastro-insumo/',insumo.id, 'edit']">Editar</button>
+              <button class="btn btn-outline-danger btn-sm" (click)="delete(insumo)">Apagar</button>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+

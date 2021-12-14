@@ -4,6 +4,6 @@ from .views import CadastroInsumoViewSet, UnidadeEngenhariaViewSet, EstoqueInsum
 
 # Rotas padrão para a aplicação
 router_insumo = SimpleRouter()
-router_insumo.register('cadastroinsumo', CadastroInsumoViewSet)
+router_insumo.register('cadastro-insumo', CadastroInsumoViewSet)
 router_insumo.register('cadastro-unidade-engenharia', UnidadeEngenhariaViewSet)
 router_insumo.register('estoqueinsumo', EstoqueInsumoViewSet)

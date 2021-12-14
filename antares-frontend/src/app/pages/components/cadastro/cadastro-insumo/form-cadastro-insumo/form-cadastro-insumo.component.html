@@ -1,0 +1,32 @@
+<!--Faz a chamada do componente card-header pois ele troca quando é cadastro ou alteração-->
+<app-card-header
+ card-header-title={{tituloPagina}}>
+</app-card-header>
+
+
+  <div class="card-body">
+    <form formGroup="insumoForm">
+
+
+     <!--Campo código SAP-->
+      <div class="form-group col-md">
+        <label for="codigo_sap_insumo">Código SAP</label>
+        <input type="number" class="form-control" id="codigo_sap_insumo" [(ngModel)]="insumo.codigo_sap_insumo" autocomplete="off">
+      </div>
+
+      <!--Campo descrição-->
+      <div class="form-group col-md">
+        <label for="descricao_insumo">Descrição Insumo</label>
+        <input type="text" class="form-control" id="descricao_insumo" [(ngModel)]="insumo.descricao_insumo" autocomplete="off">
+      </div>
+
+    </form>
+  </div>
+
+<!--Botões salvar e cancelar-->
+<button class="btn btn-danger" (click)="navegarParaListaInsumo()">Cancelar</button>
+<button class="btn btn-success salvar" (click)="save()">Salvar</button>
+
+
+
+
