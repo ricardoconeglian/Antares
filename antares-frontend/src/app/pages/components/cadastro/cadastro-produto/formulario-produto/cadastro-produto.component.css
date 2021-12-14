@@ -27,3 +27,11 @@
 .salvar{
   margin-right: 10px;
 }
+
+
+/* Retira a seta do campo number  */
+input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
