@@ -1,5 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { throwError } from 'rxjs';
 import { ApiModoManufaturaService } from 'src/app/shared/services/api-modo-manufatura.service';
 import { MessagesService } from 'src/app/shared/services/messages.service';
 
@@ -70,6 +72,7 @@ export class FormModoManufaturaComponent implements OnInit {
         },
         error => {
             console.log("Aconteceu um erro", error);
+            
         }
       );
     }
@@ -116,7 +119,7 @@ export class FormModoManufaturaComponent implements OnInit {
   */
   //Recebe do browser a URL para identificar se está sendo feito a criação ou edição
   protected setCurrentAction(){
-    
+
     if(this.route.snapshot.url[1].path == "new")
       this.currentAction = "new"
     else
@@ -143,3 +146,5 @@ export class FormModoManufaturaComponent implements OnInit {
 
 
 }
+
+
