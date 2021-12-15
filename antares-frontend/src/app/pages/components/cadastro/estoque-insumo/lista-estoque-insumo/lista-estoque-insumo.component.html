@@ -1,1 +1,49 @@
-<p>lista-estoque-insumo works!</p>
+<!--Cabeçalho da listagem de Estoque insumo-->
+<div class="card">
+  <div class="card-header">
+    Listagem de Estoque de Insumo
+    <button class="btn btn-success btn-cadastro" (click)="navegarParaCadastraEstoqueInsumo()">+ Cadastrar</button>
+  </div>
+
+
+  <!--Tabela listagem de Estoque insumo-->
+  <div class="card-body">
+    <!--Coloca a barra de rolagem na tabela-->
+    <div class="table-overflow">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>id</th>
+            <!--<th>Código SAP</th>-->
+            <th>Descrição</th>
+            <th>Unidade</th>
+            <th>Quantidade</th>
+            <th>Estoque Minimo</th>
+            <th>Valor Unitario</th>
+            <th>Valor Total</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--loop de Estoque insumo dentro do banco de dados para mostrar na tabela-->
+          <tr  *ngFor="let estoque of estoqueInsumos">
+            <td>{{estoque.id}}</td>
+            <!--<td>{{estoque.codigo_sap_insumo}}</td>-->
+            <td>{{estoque.descricao_insumo}}</td>
+            <td>{{estoque.unidade}}</td>
+            <td>{{estoque.quantidade}}</td>
+            <td>{{estoque.estoque_minimo}}</td>
+            <td>{{estoque.valor_unitario}}</td>
+            <td>{{estoque.valor_total}}</td>
+
+            <td>
+              <!--Botões editar e deletar-->
+              <button class="btn btn-outline-info btn-sm btn-editar" [routerLink]="['insumo/cadastro-insumo/',estoque.id, 'edit']">Editar</button>
+              <button class="btn btn-outline-danger btn-sm" (click)="delete(estoque)">Apagar</button>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

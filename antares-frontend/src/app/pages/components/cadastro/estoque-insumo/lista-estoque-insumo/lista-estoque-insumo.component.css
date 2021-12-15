@@ -1,0 +1,23 @@
+.card-header{
+  font-size: 25px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+}
+
+.btn-cadastro{
+  float: right;
+}
+
+.table{
+  margin-top: 25px;
+}
+
+.table-overflow {
+  max-height:400px;
+  overflow-y:auto;
+}
+
+.btn-editar{
+  margin-right: 10px;
+}
