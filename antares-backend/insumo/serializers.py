@@ -30,8 +30,7 @@ class EstoqueInsumoSerializer(serializers.ModelSerializer):
     class Meta:
         model = EstoqueInsumo
         fields = (
-            'id',
-            'codigo_sap_insumo', 
+            'id',             
             'descricao_insumo',
             'unidade',
             'quantidade',

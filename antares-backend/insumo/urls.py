@@ -6,4 +6,4 @@ from .views import CadastroInsumoViewSet, UnidadeEngenhariaViewSet, EstoqueInsum
 router_insumo = SimpleRouter()
 router_insumo.register('cadastro-insumo', CadastroInsumoViewSet)
 router_insumo.register('cadastro-unidade-engenharia', UnidadeEngenhariaViewSet)
-router_insumo.register('estoqueinsumo', EstoqueInsumoViewSet)
+router_insumo.register('estoque-insumo', EstoqueInsumoViewSet)

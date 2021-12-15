@@ -39,7 +39,6 @@ class UnidadeEngenharia(Base):
 
 #Tabela para controlar o estoque de insumos
 class EstoqueInsumo(Base):
-    codigo_sap_insumo = models.ForeignKey(CadastroInsumo, related_name='insumosap', on_delete=models.CASCADE)
     descricao_insumo = models.ForeignKey(CadastroInsumo, related_name= 'insumodescricao', on_delete=models.CASCADE)
     unidade = models.ForeignKey(UnidadeEngenharia, related_name='insumounidade', on_delete=models.CASCADE)
     quantidade = models.DecimalField(max_digits=8, decimal_places=2)

@@ -34,6 +34,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/components/cadastro/cadastro-insumo/cadastro-insumo.module').then(m => m.CadastroInsumoModule)
   },
 
+  {
+    //Rota para a chamada de estoque de insumo. Depois ela entra para o estoque-insumo-routing module
+    path: "insumo/estoque-insumo",
+    loadChildren: () => import('./pages/components/cadastro/estoque-insumo/estoque-insumo.module').then(m => m.EstoqueInsumoModule)
+  },
+
 ];
 
 @NgModule({
