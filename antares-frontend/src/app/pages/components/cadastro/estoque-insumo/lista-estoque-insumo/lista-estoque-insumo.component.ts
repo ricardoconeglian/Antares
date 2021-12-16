@@ -32,6 +32,7 @@ export class ListaEstoqueInsumoComponent implements OnInit {
      private api:ApiEstoqueInsumoService, //recebe as funções do Serviço APIEstoqueInsumoService
      protected injector: Injector,
      protected apiCadastroInsumo: ApiCadastroInsumoService,
+   
      ) {
 
        this.carregarEstoqueInsumo() //carrega todos os estoque de insumo na tabela toda vez que inicializa a pagina
@@ -104,6 +105,7 @@ export class ListaEstoqueInsumoComponent implements OnInit {
       }
 
     )}
+
 
 
 

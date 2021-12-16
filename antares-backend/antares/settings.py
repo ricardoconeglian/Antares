@@ -88,10 +88,23 @@ WSGI_APPLICATION = 'antares.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'Antares',
+        'USER': 'postgres',
+        'PASSWORD': 'delphi',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+
+"""
+DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+"""
 
 
 # Password validation
