@@ -2,10 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ApiEstoqueInsumoService {
+
+
 
    //monta a base da URL que será enviado a API
    baseUrl = "http://127.0.0.1:8000/";
@@ -13,7 +16,9 @@ export class ApiEstoqueInsumoService {
    httpHeaders = new HttpHeaders().set('Content-Type', 'application/json')
 
 
-   constructor(private http: HttpClient) { }
+   constructor(
+    private http: HttpClient,
+    ) { }
 
    //Busca todos os estoque de insumo no banco de dados
    getAllEstoqueInsumo(): Observable<any>{
@@ -48,6 +53,7 @@ export class ApiEstoqueInsumoService {
      return this.http.delete(this.baseUrl + 'insumo/cadastro-insumo/' + estoqueInsumo.id + '/',
      {headers: this.httpHeaders});
    }
+
 
 
 
