@@ -1,9 +1,8 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { throwError } from 'rxjs';
 import { ApiModoManufaturaService } from 'src/app/shared/services/api-modo-manufatura.service';
 import { MessagesService } from 'src/app/shared/services/messages.service';
+
 
 @Component({
   selector: 'app-form-modo-manufatura',
@@ -26,6 +25,8 @@ export class FormModoManufaturaComponent implements OnInit {
     {modo_manufatura: ''},
   ]
 
+  //Recebe as falhas vindas dos cadastros
+  serverErrorMessages = []
 
 
   constructor(
@@ -72,7 +73,9 @@ export class FormModoManufaturaComponent implements OnInit {
         },
         error => {
             console.log("Aconteceu um erro", error);
-            
+            //carrega as mensagens de erro na variavel
+            this.serverErrorMessages = error.error.modo_manufatura
+
         }
       );
     }
@@ -87,6 +90,7 @@ export class FormModoManufaturaComponent implements OnInit {
         },
         error => {
           console.log("Aconteceu um erro", error);
+          this.serverErrorMessages = error.error.modo_manufatura
       }
       )
     }

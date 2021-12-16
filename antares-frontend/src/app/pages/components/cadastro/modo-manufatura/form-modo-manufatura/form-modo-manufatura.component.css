@@ -26,3 +26,9 @@
 .salvar{
   margin-right: 10px;
 }
+
+.error-list{
+  list-style: none;
+  margin-top: 5px;
+  width: 100%;
+}

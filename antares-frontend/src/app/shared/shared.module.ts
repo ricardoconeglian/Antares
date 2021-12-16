@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedRoutingModule } from './shared-routing.module';
 import { CardHeaderComponent } from './components/card-header/card-header.component';
+import { ServerErrorMessagesComponent } from './components/server-error-messages/server-error-messages.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { CardHeaderComponent } from './components/card-header/card-header.compon
     HttpClientModule,
     CardHeaderComponent,
     
+
 
   ],
   providers: [

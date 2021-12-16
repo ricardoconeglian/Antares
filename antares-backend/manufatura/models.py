@@ -13,7 +13,7 @@ class Base(models.Model):
 
 # Tabela para o tipo de manufatura utilizada (manufatura aditiva, usinagem, placa eletronica)
 class TipoManufatura(Base):
-    tipo_manufatura = models.CharField(max_length=100)
+    tipo_manufatura = models.CharField(max_length=100, unique=True)
 
     class Meta:
         verbose_name = 'Tipo Manufatura'
@@ -25,10 +25,10 @@ class TipoManufatura(Base):
 
 # Tabela para o modo manufatura. Especifica se é 3D, CNC ou placa eletronica
 class ModoManufatura(Base):
-    modo_manufatura = models.CharField(max_length=100)
+    modo_manufatura = models.CharField(max_length=100, unique=True)
 
     class Meta:
-        verbose_name = 'Modo Manufatura'
+        verbose_name = 'Modo de Manufatura'
         verbose_name_plural = 'Modos Manufatura'
         
 

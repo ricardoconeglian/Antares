@@ -8,6 +8,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [
     FormModoManufaturaComponent,
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     ModoManufaturaRoutingModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+
   ]
 })
 export class ModoManufaturaModule { }
