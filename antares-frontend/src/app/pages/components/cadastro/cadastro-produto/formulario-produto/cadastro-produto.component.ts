@@ -31,7 +31,13 @@ export class CadastroProdutoComponent implements OnInit {
     {codigo_sap_produto: '', nome_produto: '', descricao_produto: '', utilizacao: '', projeto: '', foto: ''},
   ];
 
-  errorMessages = []
+  //Array de erros recebidos da API
+  errorMessages = {
+    codigo_sap_produto: '',
+    nome_produto: '',
+    descricao_produto: '',
+    utilizacao: ''
+  }
 
   constructor(
     protected router: Router,
@@ -74,9 +80,8 @@ export class CadastroProdutoComponent implements OnInit {
           this.navegarParaListaProduto()
         },
         error => {
-            console.log("Aconteceu um erro", error);
-            this.errorMessages = error.error.codigo_sap_produto
-            console.log(this.errorMessages);
+            //Envia array de erros
+            this.errorMessages = error.error
         }
       );
     }
@@ -90,7 +95,8 @@ export class CadastroProdutoComponent implements OnInit {
           this.navegarParaListaProduto()
         },
         error => {
-          console.log("Aconteceu um erro", error);
+          //Envia array de erros
+          this.errorMessages = error.error
       }
       )
     }

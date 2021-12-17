@@ -14,7 +14,7 @@
 
         <!--Mostra o erro caso ocorra algum-->
         <ul *ngIf="errorMessages" class="error-list col-md">
-          <li class="alert-danger">{{errorMessages}}</li>
+          <li class="alert-danger">{{errorMessages.codigo_sap_produto}}</li>
         </ul>
 
       </div>
@@ -23,18 +23,36 @@
       <div class="form-group col-md">
         <label for="nome_produto">Nome do Produto</label>
         <input type="text" class="form-control" id="nome_produto" [(ngModel)]="produto.nome_produto" autocomplete="off">
+
+        <!--Mostra o erro caso ocorra algum-->
+        <ul *ngIf="errorMessages" class="error-list col-md">
+          <li class="alert-danger">{{errorMessages.nome_produto}}</li>
+        </ul>
+
       </div>
 
       <!--Campo descrição do Produto-->
       <div class="form-group col-md">
         <label for="descricao_produto">Descrição do Produto</label>
         <input type="text" class="form-control" id="descricao_produto" [(ngModel)]="produto.descricao_produto" autocomplete="off">
+
+        <!--Mostra o erro caso ocorra algum-->
+        <ul *ngIf="errorMessages" class="error-list col-md">
+          <li class="alert-danger">{{errorMessages.descricao_produto}}</li>
+        </ul>
+
       </div>
 
       <!--Campo utilização do Produto-->
       <div class="form-group col-md">
         <label for="utilizacao">Utilização do Produto</label>
         <input type="text" class="form-control" id="utilizacao" [(ngModel)]="produto.utilizacao" autocomplete="off">
+
+        <!--Mostra o erro caso ocorra algum-->
+        <ul *ngIf="errorMessages" class="error-list col-md">
+          <li class="alert-danger">{{errorMessages.utilizacao}}</li>
+        </ul>
+
       </div>
 
 

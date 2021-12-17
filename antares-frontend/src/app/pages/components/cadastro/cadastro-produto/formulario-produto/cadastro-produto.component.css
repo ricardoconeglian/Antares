@@ -7,7 +7,8 @@
 }
 
 .form-group {
-  margin-bottom: 8px;
+  margin-bottom: 0px;
+
 }
 
 .form-control:focus{
@@ -18,7 +19,9 @@
 .error-list{
   list-style: none;
   margin-top: 5px;
+  margin-bottom: 0px;
   width: 100%;
+  font-size: 13px;
 }
 
 .margin-left{
@@ -27,7 +30,7 @@
 
 .btn{
   float: right;
-  margin-top: 15px;
+  margin-top: 10px;
   position: right;
 }
 .salvar{
