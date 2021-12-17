@@ -8,9 +8,15 @@
   <div class="card-body">
     <form formGroup="produtoForm">
       <!--Campo código SAP-->
-      <div class="form-group col-md-3">
+      <div class="form-group col-md">
         <label for="codigo_sap_produto">Código SAP</label>
         <input type="number" class="form-control" id="codigo_sap_produto" [(ngModel)]="produto.codigo_sap_produto" autocomplete="off">
+
+        <!--Mostra o erro caso ocorra algum-->
+        <ul *ngIf="errorMessages" class="error-list col-md">
+          <li class="alert-danger">{{errorMessages}}</li>
+        </ul>
+
       </div>
 
       <!--Campo nome do Produto-->

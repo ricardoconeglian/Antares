@@ -22,8 +22,8 @@ class CadastroProdutos(Base):
    # foto = models.ImageField(upload_to='foto/', blank=True, null=True)
 
     class Meta:
-        verbose_name = 'Cadastro Produto'
-        verbose_name_plural = 'Cadastro Produtos'
+        verbose_name = 'Cadastro de Produto'
+        verbose_name_plural = 'Cadastro de Produtos'
         
 
     def __str__(self):

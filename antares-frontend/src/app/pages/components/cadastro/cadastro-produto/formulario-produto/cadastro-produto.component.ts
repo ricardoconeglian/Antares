@@ -31,7 +31,7 @@ export class CadastroProdutoComponent implements OnInit {
     {codigo_sap_produto: '', nome_produto: '', descricao_produto: '', utilizacao: '', projeto: '', foto: ''},
   ];
 
-
+  errorMessages = []
 
   constructor(
     protected router: Router,
@@ -75,6 +75,8 @@ export class CadastroProdutoComponent implements OnInit {
         },
         error => {
             console.log("Aconteceu um erro", error);
+            this.errorMessages = error.error.codigo_sap_produto
+            console.log(this.errorMessages);
         }
       );
     }
@@ -92,7 +94,7 @@ export class CadastroProdutoComponent implements OnInit {
       }
       )
     }
-    
+
   };
 
   //Retorna para a tela lista produto

@@ -32,7 +32,7 @@ export class ListaEstoqueInsumoComponent implements OnInit {
      private api:ApiEstoqueInsumoService, //recebe as funções do Serviço APIEstoqueInsumoService
      protected injector: Injector,
      protected apiCadastroInsumo: ApiCadastroInsumoService,
-   
+
      ) {
 
        this.carregarEstoqueInsumo() //carrega todos os estoque de insumo na tabela toda vez que inicializa a pagina
@@ -46,7 +46,7 @@ export class ListaEstoqueInsumoComponent implements OnInit {
      this.route.paramMap.subscribe((param: ParamMap) => {
        let id = parseInt(param.get('id') || '{}');
        this.selected_id = id;
-
+      
 
      })
    }
@@ -56,7 +56,7 @@ export class ListaEstoqueInsumoComponent implements OnInit {
      this.api.getAllEstoqueInsumo().subscribe(
        data => {
          this.estoqueInsumos = data
-
+         console.log(this.estoqueInsumos)
        },
        error => {
          console.log("Aconteceu um erro", error)
@@ -105,10 +105,6 @@ export class ListaEstoqueInsumoComponent implements OnInit {
       }
 
     )}
-
-
-
-
 
 
 }
