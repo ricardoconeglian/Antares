@@ -24,6 +24,12 @@ export class FormCadastroInsumoComponent implements OnInit {
     {id: '', codigo_sap_insumo: '', descricao_insumo: ''}
   ];
 
+  //Array de erros recebidos da API
+  errorMessages = {
+    codigo_sap_insumo: '',
+    descricao_insumo: '',
+  }
+
 
 
   constructor(
@@ -69,7 +75,8 @@ export class FormCadastroInsumoComponent implements OnInit {
           this.navegarParaListaInsumo()
         },
         error => {
-            console.log("Aconteceu um erro", error);
+             //Envia array de erros
+             this.errorMessages = error.error
         }
       );
     }
@@ -83,7 +90,8 @@ export class FormCadastroInsumoComponent implements OnInit {
           this.navegarParaListaInsumo()
         },
         error => {
-          console.log("Aconteceu um erro", error);
+           //Envia array de erros
+           this.errorMessages = error.error
       }
       )
     }
