@@ -12,6 +12,12 @@
       <div class="form-group col-md">
         <label for="tipo_manufatura">Tipo Manufatura</label>
         <input type="text" class="form-control" id="tipo_manufatura" [(ngModel)]="tipoManufatura.tipo_manufatura" autocomplete="off">
+
+       <!--Mostra o erro caso ocorra algum-->
+       <ul *ngIf="errorMessages" class="error-list col-md">
+        <li class="alert-danger">{{errorMessages.tipo_manufatura}}</li>
+      </ul>
+
       </div>
 
     </form>

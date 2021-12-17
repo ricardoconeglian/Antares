@@ -25,7 +25,11 @@ export class FormUnidadeEngenhariaComponent implements OnInit {
     {descricao: '', unidade:''},
   ]
 
-
+//Array de erros recebidos da API
+errorMessages = {
+  descricao: '',
+  unidade: ''
+}
 
   constructor(
     protected router: Router,
@@ -70,7 +74,8 @@ export class FormUnidadeEngenhariaComponent implements OnInit {
           this.navegarParaListaUnidadeEngenharia()
         },
         error => {
-            console.log("Aconteceu um erro", error);
+            //Envia array de erros
+            this.errorMessages = error.error
         }
       );
     }
@@ -84,7 +89,8 @@ export class FormUnidadeEngenhariaComponent implements OnInit {
           this.navegarParaListaUnidadeEngenharia()
         },
         error => {
-          console.log("Aconteceu um erro", error);
+         //Envia array de erros
+         this.errorMessages = error.error
       }
       )
     }

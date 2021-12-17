@@ -25,8 +25,10 @@ export class FormModoManufaturaComponent implements OnInit {
     {modo_manufatura: ''},
   ]
 
-  //Recebe as falhas vindas dos cadastros
-  serverErrorMessages = []
+  //Array de erros recebidos da API
+  errorMessages = {
+    modo_manufatura: ''
+  }
 
 
   constructor(
@@ -72,10 +74,8 @@ export class FormModoManufaturaComponent implements OnInit {
           this.navegarParaListaModoManufatura()
         },
         error => {
-            console.log("Aconteceu um erro", error);
-            //carrega as mensagens de erro na variavel
-            this.serverErrorMessages = error.error.modo_manufatura
-
+            //Envia array de erros
+            this.errorMessages = error.error
         }
       );
     }
@@ -89,8 +89,8 @@ export class FormModoManufaturaComponent implements OnInit {
           this.navegarParaListaModoManufatura()
         },
         error => {
-          console.log("Aconteceu um erro", error);
-          this.serverErrorMessages = error.error.modo_manufatura
+         //Envia array de erros
+         this.errorMessages = error.error
       }
       )
     }

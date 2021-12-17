@@ -12,12 +12,24 @@
       <div class="form-group col-md">
         <label for="descricao">Descrição Unidade de Engenharia</label>
         <input type="text" class="form-control" id="descricao" [(ngModel)]="unidadeEngenharia.descricao" autocomplete="off">
+
+         <!--Mostra o erro caso ocorra algum-->
+         <ul *ngIf="errorMessages" class="error-list col-md">
+          <li class="alert-danger">{{errorMessages.descricao}}</li>
+        </ul>
+
       </div>
 
       <!--Campo unidade engenharia-->
       <div class="form-group col-md">
         <label for="unidade">Unidade de Engenharia</label>
         <input type="text" class="form-control" id="unidade" [(ngModel)]="unidadeEngenharia.unidade" autocomplete="off">
+
+        <!--Mostra o erro caso ocorra algum-->
+        <ul *ngIf="errorMessages" class="error-list col-md">
+          <li class="alert-danger">{{errorMessages.unidade}}</li>
+        </ul>
+
       </div>
 
     </form>

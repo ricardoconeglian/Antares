@@ -7,25 +7,19 @@
   <div class="card-body">
     <form formGroup="modoManufaturaForm">
 
-
      <!--Campo modo manufatura-->
       <div class="form-group col-md">
         <label for="modo_manufatura">Modo Manufatura</label>
         <input type="text" class="form-control" id="modo_manufatura" [(ngModel)]="modoManufatura.modo_manufatura" autocomplete="off">
 
-        <!---Mostra a falha ocorrida na hora de salvar-->
-        <ul class="error-list col-md" *ngFor="let error of serverErrorMessages">
-          <li class="alert-danger ">{{error}}</li>
+        <!--Mostra o erro caso ocorra algum-->
+        <ul *ngIf="errorMessages" class="error-list col-md">
+          <li class="alert-danger">{{errorMessages.modo_manufatura}}</li>
         </ul>
+
       </div>
 
-
     </form>
-
-
-
-
-
   </div>
 
 <!--Botões salvar e cancelar-->

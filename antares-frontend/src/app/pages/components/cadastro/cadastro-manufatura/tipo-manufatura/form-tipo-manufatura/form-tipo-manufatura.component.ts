@@ -26,6 +26,11 @@ export class FormTipoManufaturaComponent implements OnInit {
     { tipo_manufatura: ''},
   ]
 
+  //Array de erros recebidos da API
+  errorMessages = {
+    tipo_manufatura: ''
+  }
+
 
 
   constructor(
@@ -71,7 +76,8 @@ export class FormTipoManufaturaComponent implements OnInit {
           this.navegarParaListaTipoManufatura()
         },
         error => {
-            console.log("Aconteceu um erro", error);
+            //Envia array de erros
+            this.errorMessages = error.error
         }
       );
     }
@@ -85,7 +91,8 @@ export class FormTipoManufaturaComponent implements OnInit {
           this.navegarParaListaTipoManufatura()
         },
         error => {
-          console.log("Aconteceu um erro", error);
+          //Envia array de erros
+          this.errorMessages = error.error
       }
       )
     }
