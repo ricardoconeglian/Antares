@@ -1,0 +1,21 @@
+SELECT 
+	Insumo_estoqueinsumo.id,
+	insumo_estoqueinsumo.quantidade,
+	insumo_estoqueinsumo.valor_unitario,
+	insumo_estoqueinsumo.valor_total,
+	insumo_estoqueinsumo.estoque_minimo,
+	insumo_estoqueinsumo.descricao_insumo_id,
+	insumo_estoqueinsumo.unidade_id,
+	insumo_cadastroinsumo.id,
+	insumo_cadastroinsumo.codigo_sap_insumo,
+	insumo_cadastroinsumo.descricao_insumo,
+	insumo_unidadeengenharia.id,
+	insumo_unidadeengenharia.descricao,
+	insumo_unidadeengenharia.unidade
+	
+FROM insumo_estoqueinsumo
+INNER JOIN insumo_cadastroinsumo
+	ON insumo_estoqueinsumo.descricao_insumo_id = insumo_cadastroinsumo.id
+inner join insumo_unidadeengenharia
+	on insumo_estoqueinsumo.unidade_id = insumo_unidadeengenharia.id
+
