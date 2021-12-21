@@ -1,5 +1,4 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router'
 import { ApiProdutoService } from 'src/app/shared/services/api-produto.service';
 import { MessagesService } from 'src/app/shared/services/messages.service';

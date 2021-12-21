@@ -1,0 +1,47 @@
+.card-header{
+  font-size: 25px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 15px;
+
+}
+
+.form-control:focus{
+  border-color: #D9CB04;
+  box-shadow: 0 0 0 0.2rem rgba(217,203,4,0.25);
+}
+
+.error-list{
+  list-style: none;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  width: 100%;
+  font-size: 13px;
+}
+
+.margin-left{
+  margin-left: 4px;
+}
+
+.btn{
+  float: right;
+  margin-top: 10px;
+  position: right;
+  margin-right: 15px;
+}
+
+
+/* Retira a seta do campo number  */
+input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+input[disabled]{
+  background: #f0eded;
+}

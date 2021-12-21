@@ -34,7 +34,7 @@ export class ApiEstoqueInsumoService {
    }
 
    //Salva novo estoque de insumo no banco de dados
-   saveEstoqueInsumo(estoqueInsumo:any) : Observable<any>{
+   saveNewEstoqueInsumo(estoqueInsumo:any) : Observable<any>{
      return this.http.post(this.baseUrl + 'insumo/estoque-insumo/', estoqueInsumo,
      {headers: this.httpHeaders});
 
