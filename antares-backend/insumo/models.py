@@ -13,7 +13,7 @@ class Base(models.Model):
 #Tabela para cadastro de insumos da celula
 class CadastroInsumo(Base):
     codigo_sap_insumo = models.IntegerField(unique=True)
-    descricao_insumo = models.CharField(max_length=100)
+    descricao_insumo = models.CharField(max_length=101)
     
 
     class Meta:
@@ -39,12 +39,13 @@ class UnidadeEngenharia(Base):
 
 #Tabela para controlar o estoque de insumos
 class EstoqueInsumo(Base):
-    descricao_insumo = models.ForeignKey(CadastroInsumo, related_name="descricaoinsumo",on_delete=models.CASCADE)
+    insumo = models.ForeignKey(CadastroInsumo, related_name='insumo', on_delete=models.CASCADE)
     unidade = models.ForeignKey(UnidadeEngenharia, related_name='insumounidade', on_delete=models.CASCADE)
     quantidade = models.DecimalField(max_digits=8, decimal_places=2)
     estoque_minimo = models.DecimalField(max_digits=8, decimal_places=2)
     valor_unitario = models.DecimalField(max_digits=8, decimal_places=2)
     valor_total = models.DecimalField(max_digits=8, decimal_places=2)
+    ativo = models.BooleanField(default=True)
     
 
     class Meta:
@@ -53,7 +54,7 @@ class EstoqueInsumo(Base):
         
 
     def __str__(self):
-        return self.descricao_insumo
+        return self.insumo
 
 
 

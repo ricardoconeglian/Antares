@@ -15,4 +15,4 @@ class UnidadeEngenhariaAdmin(admin.ModelAdmin):
 # Mostra campos no Django Admin de estoque de insumos
 @admin.register(EstoqueInsumo)
 class EstoqueInsumoAdmin(admin.ModelAdmin):
-    list_display = ('descricao_insumo', 'quantidade', 'valor_unitario')
+    list_display = ('insumo', 'quantidade', 'valor_unitario')

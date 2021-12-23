@@ -12,11 +12,11 @@ import { ApiEstoqueInsumoService } from 'src/app/shared/services/api-estoque-ins
 export class ListaEstoqueInsumoComponent implements OnInit {
 
    //Cria um array com os dados de estoque insumo
-   estoqueInsumo = {id: '', descricao_insumo: '', unidade: '', quantidade: '', valor_unitario:'', valor_total: '', estoque_minimo: ''}
+   estoqueInsumo = {id: '', descricao_insumo:{descricao_insumo: ''}, unidade: '', quantidade: '', valor_unitario:'', valor_total: '', estoque_minimo: ''}
 
    //Array que recebera os estoque de insumo vindos do banco de dados
    estoqueInsumos = [
-    {id: '', descricao_insumo: '', unidade: '', quantidade: '', valor_unitario:'', valor_total: '', estoque_minimo: ''}
+    {id: '', descricao_insumo:{descricao_insumo: ''}, unidade: '', quantidade: '', valor_unitario:'', valor_total: '', estoque_minimo: ''}
    ];
 
    getAllCadastroInsumo:[
@@ -46,7 +46,7 @@ export class ListaEstoqueInsumoComponent implements OnInit {
      this.route.paramMap.subscribe((param: ParamMap) => {
        let id = parseInt(param.get('id') || '{}');
        this.selected_id = id;
-      
+
 
      })
    }

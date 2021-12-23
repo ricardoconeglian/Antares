@@ -39,6 +39,8 @@ export class FormEstoqueInsumoComponent implements OnInit {
     valor_total: ''},
   ];
 
+
+
   //Array de erros recebidos da API
   errorMessages = {codigo_sap_insumo: '',
   descricao_insumo: '',
@@ -65,6 +67,7 @@ export class FormEstoqueInsumoComponent implements OnInit {
     this.route.paramMap.subscribe((param: ParamMap) => {
       let id = parseInt(param.get('id') || '{}');
       this.carregaEstoqueInsumo(id)
+
     })
   }
 
@@ -123,6 +126,7 @@ export class FormEstoqueInsumoComponent implements OnInit {
       this.api.getEstoqueInsumo(id).subscribe(
         data => {
           this.insumo = data;
+          
         },
         error => {
           console.log("Aconteceu um erro", error);

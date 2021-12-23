@@ -2,8 +2,8 @@ from django.contrib import admin
 from .models import CadastroProdutos, ListaTecnica
 
 # Register your models here.
-#usuario: admin
-#senha: admin
+#usuario: ricardo
+#senha: guarani
 
 # Mostra campos no Django Admin de cadastros
 @admin.register(CadastroProdutos)

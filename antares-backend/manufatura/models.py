@@ -46,9 +46,10 @@ class ExecucaoManufatura(Base):
     inicio_manufatura = models.DateTimeField(auto_now_add=True)
     fim_manufatura = models.DateTimeField(auto_now_add=True)
     executante_inicio = models.CharField(max_length=100)
-    executante_final = models.CharField(max_length=100)
+    executante_final = models.CharField(max_length=99)
     modo_manufatura = models.ForeignKey(ModoManufatura, related_name='execucaomanufaturamodo', on_delete=models.CASCADE)
     manufatura_finalizada = models.BooleanField(default=False)
+    ativo = models.BooleanField(default=True)
     
     class Meta:
         verbose_name = 'Execução Manufatura'
