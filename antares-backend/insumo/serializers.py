@@ -30,7 +30,7 @@ class EstoqueInsumoSerializer(serializers.ModelSerializer):
        
 
     descricao_insumo =  CadastroInsumoSerializer(required=True)
-   
+    
     class Meta:
         model = EstoqueInsumo
         fields = (

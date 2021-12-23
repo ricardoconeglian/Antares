@@ -1,6 +1,7 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router'
 import { ApiEstoqueInsumoService } from 'src/app/shared/services/api-estoque-insumo.service';
+import { ApiUnidadeEngenhariaService } from 'src/app/shared/services/api-unidade-engenharia.service';
 import { MessagesService } from 'src/app/shared/services/messages.service';
 
 @Component({
@@ -39,6 +40,10 @@ export class FormEstoqueInsumoComponent implements OnInit {
     valor_total: ''},
   ];
 
+  unidadeEngenharias = [
+    {id: '', descricao: null , unidade: ''}
+  ];
+
 
 
   //Array de erros recebidos da API
@@ -55,7 +60,7 @@ export class FormEstoqueInsumoComponent implements OnInit {
     protected api: ApiEstoqueInsumoService,
     protected injector: Injector,
     protected messagesService: MessagesService,
-
+    protected apiUnidadeEngenharia: ApiUnidadeEngenhariaService
 
     ) {
     this.route = this.injector.get(ActivatedRoute); //Injeção de dependencia da rota
@@ -67,6 +72,7 @@ export class FormEstoqueInsumoComponent implements OnInit {
     this.route.paramMap.subscribe((param: ParamMap) => {
       let id = parseInt(param.get('id') || '{}');
       this.carregaEstoqueInsumo(id)
+      this.carregarUnidadeEngenharia()
 
     })
   }
@@ -126,7 +132,7 @@ export class FormEstoqueInsumoComponent implements OnInit {
       this.api.getEstoqueInsumo(id).subscribe(
         data => {
           this.insumo = data;
-          
+
         },
         error => {
           console.log("Aconteceu um erro", error);
@@ -134,6 +140,18 @@ export class FormEstoqueInsumoComponent implements OnInit {
       )
   }
 
+  //Carrega os dados da unidade de engenharia para o campo select do formulario
+
+  carregarUnidadeEngenharia = () => {
+    this.apiUnidadeEngenharia.getAllUniEng().subscribe(
+      data => {
+        this.unidadeEngenharias = data
+      },
+      error => {
+        console.log("Aconteceu um erro", error)
+      }
+    )
+  }
 
 
   /* --------------------------------------------------------
