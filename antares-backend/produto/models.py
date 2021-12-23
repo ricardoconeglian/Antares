@@ -15,10 +15,9 @@ class Base(models.Model):
 # Tabela para cadastrar os produtos
 class CadastroProdutos(Base):
     codigo_sap_produto = models.IntegerField(unique=True)
-    nome_produto = models.CharField(max_length= 149)
+    nome_produto = models.CharField(max_length= 150)
     descricao_produto = models.TextField(max_length=300)
-    utilizacao = models.CharField(max_length=100)
-    ativo = models.BooleanField(default=True)
+    utilizacao = models.CharField(max_length=100)   
    # projeto = models.FileField(upload_to='projeto/', blank=True, null=True)
    # foto = models.ImageField(upload_to='foto/', blank=True, null=True)
    

@@ -45,7 +45,7 @@ class EstoqueInsumo(Base):
     estoque_minimo = models.DecimalField(max_digits=8, decimal_places=2)
     valor_unitario = models.DecimalField(max_digits=8, decimal_places=2)
     valor_total = models.DecimalField(max_digits=8, decimal_places=2)
-    ativo = models.BooleanField(default=True)
+    
     
 
     class Meta:

@@ -15,10 +15,10 @@ class Base(models.Model):
 class EstoqueAlmoxarifado(Base):
     codigo_sap_produto = models.ForeignKey(CadastroProdutos, related_name='estoqueproduto', on_delete=models.CASCADE)
     nome_produto = models.ForeignKey(CadastroProdutos, related_name='estoquenome', on_delete=models.CASCADE, null=True)
-    quantidade_entregue = models.DecimalField(max_digits=7, decimal_places=2, null=True)
+    quantidade_entregue = models.DecimalField(max_digits=8, decimal_places=2, null=True)
     valor_unitario = models.ForeignKey(CadastroInsumo, related_name='valorinsumo', on_delete=models.CASCADE, null=True)
     valor_total = models.DecimalField(max_digits=8, decimal_places=2, null=True)
-    ativo = models.BooleanField(default=True)
+   
     
     class Meta:
         verbose_name = 'Estoque Almoxarifado'
