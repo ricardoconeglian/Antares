@@ -38,7 +38,7 @@
           <label for="unidade">Unidade de Engenharia</label>
 
           <select name="unidade" class="form-control" id="unidade">
-            <option *ngFor="let insumo of insumos" > </option>
+            <option *ngFor="let insumo of insumos" [value]="insumo.unidade">{{insumo.unidade}}</option>
 
           </select>
 
