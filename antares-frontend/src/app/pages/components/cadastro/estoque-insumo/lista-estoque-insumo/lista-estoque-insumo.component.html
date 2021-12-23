@@ -14,9 +14,7 @@
         <thead>
           <tr>
             <th>id</th>
-            <!--<th>Código SAP</th>-->
-            <th>Descrição</th>
-            <th>Unidade</th>
+            <th>Insumo</th>
             <th>Quantidade</th>
             <th>Estoque Minimo</th>
             <th>Valor Unitario</th>
@@ -28,9 +26,11 @@
           <!--loop de Estoque insumo dentro do banco de dados para mostrar na tabela-->
           <tr  *ngFor="let estoque of estoqueInsumos">
             <td>{{estoque.id}}</td>
-            <!--<td>{{estoque.codigo_sap_insumo}}</td>-->
-            <td>{{estoque.descricao_insumo.descricao_insumo}}</td>
-            <td>{{estoque.unidade}}</td>
+            <td>
+              <strong>{{estoque.descricao_insumo.descricao_insumo}}</strong><br>
+              <small>Cod.: {{estoque.descricao_insumo.codigo_sap_insumo}}</small><br>
+              <small>{{estoque.unidade}}</small>
+            </td>
             <td>{{estoque.quantidade}}</td>
             <td>{{estoque.estoque_minimo}}</td>
             <td>{{estoque.valor_unitario}}</td>
