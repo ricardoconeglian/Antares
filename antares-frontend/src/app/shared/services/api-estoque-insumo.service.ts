@@ -26,6 +26,12 @@ export class ApiEstoqueInsumoService {
      {headers: this.httpHeaders})
    }
 
+   //Busca todos os estoque de insumo no banco de dados
+   getListEstoqueInsumo(): Observable<any>{
+    return this.http.get(this.baseUrl + 'insumo/lista-estoque-insumo',
+    {headers: this.httpHeaders})
+  }
+
    //Busca o estoque de insumo por ID, usado em Update e Delete
    getEstoqueInsumo(id:any) : Observable<any>{
      return this.http.get(this.baseUrl + 'insumo/estoque-insumo/' + id + '/',

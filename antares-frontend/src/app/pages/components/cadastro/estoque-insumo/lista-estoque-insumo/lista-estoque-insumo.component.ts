@@ -53,7 +53,7 @@ export class ListaEstoqueInsumoComponent implements OnInit {
 
    //Carrega os estoque de insumo que estão no banco de dados
    carregarEstoqueInsumo = () => {
-     this.api.getAllEstoqueInsumo().subscribe(
+     this.api.getListEstoqueInsumo().subscribe(
        data => {
          this.estoqueInsumos = data
          console.log(this.estoqueInsumos)

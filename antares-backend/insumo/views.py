@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from .models import CadastroInsumo, UnidadeEngenharia, EstoqueInsumo
-from .serializers import CadastroInsumoSerializer, UnidadeEngenhariaSerializer, EstoqueInsumoSerializer
+from .serializers import CadastroInsumoSerializer, UnidadeEngenhariaSerializer, EstoqueInsumoSerializer, ListaEstoqueInsumoSerializer
 
 # View CRUD cadastro de insumos
 class CadastroInsumoViewSet(viewsets.ModelViewSet):
@@ -22,3 +22,9 @@ class EstoqueInsumoViewSet(viewsets.ModelViewSet):
      #   estoque = queryset.valor_unitario
       #  total = queryset.valor_total
        # balanco = estoque * total
+
+# Lista cadastro de estoque Insumos
+class ListaEstoqueInsumoViewSet(viewsets.ModelViewSet):
+    queryset = EstoqueInsumo.objects.all()
+    serializer_class = ListaEstoqueInsumoSerializer
+    http_method_names = ['get']
