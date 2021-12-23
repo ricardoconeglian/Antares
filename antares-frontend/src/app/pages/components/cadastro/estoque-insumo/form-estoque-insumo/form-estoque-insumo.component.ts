@@ -41,7 +41,7 @@ export class FormEstoqueInsumoComponent implements OnInit {
   ];
 
   unidadeEngenharias = [
-    {id: '', descricao: null , unidade: ''}
+    {id: '', descricao: '' , unidade: ''}
   ];
 
 
