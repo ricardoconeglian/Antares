@@ -42,9 +42,10 @@ class EstoqueInsumo(Base):
     descricao_insumo = models.ForeignKey(CadastroInsumo, related_name= 'insumodescricao', on_delete=models.CASCADE)
     unidade = models.ForeignKey(UnidadeEngenharia, related_name='insumounidade', on_delete=models.CASCADE)
     quantidade = models.DecimalField(max_digits=8, decimal_places=2)
+    estoque_minimo = models.DecimalField(max_digits=8, decimal_places=2)
     valor_unitario = models.DecimalField(max_digits=8, decimal_places=2)
     valor_total = models.DecimalField(max_digits=8, decimal_places=2)
-    estoque_minimo = models.DecimalField(max_digits=8, decimal_places=2)
+    
 
     class Meta:
         verbose_name = 'Estoque Insumo'

@@ -43,7 +43,7 @@ export class ApiEstoqueInsumoService {
    // Altera o estoque de insumo
    updateEstoqueInsumo(estoqueInsumo:any) : Observable<any>{
      // body é o corpo com os dados alterados do JSON, precisa dele para funcionar
-     let body = {descricao_insumo: estoqueInsumo.descricao_insumo, unidade: estoqueInsumo.unidade, quantidade: estoqueInsumo.quantidade, valor_unitario: estoqueInsumo.valor_unitario, valor_total:estoqueInsumo.valor_total, estoque_minimo: estoqueInsumo}
+     let body = {descricao_insumo: estoqueInsumo.descricao_insumo, unidade: estoqueInsumo.unidade, quantidade: estoqueInsumo.quantidade, valor_unitario: estoqueInsumo.valor_unitario, valor_total:estoqueInsumo.valor_total, estoque_minimo: estoqueInsumo.estoque_minimo}
      return this.http.put(this.baseUrl + 'insumo/estoque-insumo/' + estoqueInsumo.id + '/', body,
      {headers: this.httpHeaders});
    }

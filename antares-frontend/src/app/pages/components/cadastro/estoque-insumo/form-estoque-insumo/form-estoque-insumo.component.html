@@ -36,7 +36,11 @@
       <div class="row">
         <div class="form-group col-md">
           <label for="unidade">Unidade de Engenharia</label>
-          <input type="text" class="form-control" id="unidade" [(ngModel)]="insumo.unidade" autocomplete="off">
+
+          <select name="unidade" class="form-control" id="unidade">
+            <option *ngFor="let insumo of insumos" > </option>
+
+          </select>
 
           <!--Mostra o erro caso ocorra algum-->
           <ul *ngIf="errorMessages" class="error-list col-md">
@@ -48,7 +52,7 @@
         <!--Campo quantidade de insumo-->
         <div class="form-group col-md">
           <label for="quantidade">Quantidade de insumo</label>
-          <input type="text" class="form-control" id="quantidade" [(ngModel)]="insumo.quantidade" autocomplete="off">
+          <input type="number" class="form-control" id="quantidade" [(ngModel)]="insumo.quantidade" autocomplete="off">
 
           <!--Mostra o erro caso ocorra algum-->
           <ul *ngIf="errorMessages" class="error-list col-md">
@@ -60,7 +64,7 @@
         <!--Campo estoque minimo-->
         <div class="form-group col-md">
           <label for="estoque_minimo">Estoque Mínimo de Insumo</label>
-          <input type="text" class="form-control" id="estoque_minimo" [(ngModel)]="insumo.estoque_minimo" autocomplete="off">
+          <input type="number" class="form-control" id="estoque_minimo" [(ngModel)]="insumo.estoque_minimo" autocomplete="off">
 
           <!--Mostra o erro caso ocorra algum-->
           <ul *ngIf="errorMessages" class="error-list col-md">
@@ -74,7 +78,7 @@
       <div class="row">
         <div class="form-group col-md">
           <label for="valor_unitario">Valor Unitário</label>
-          <input type="text" class="form-control" id="valor_unitario" [(ngModel)]="insumo.valor_unitario" autocomplete="off">
+          <input type="number" class="form-control" id="valor_unitario" [(ngModel)]="insumo.valor_unitario" autocomplete="off">
 
           <!--Mostra o erro caso ocorra algum-->
           <ul *ngIf="errorMessages" class="error-list col-md">
@@ -86,7 +90,7 @@
         <!--Campo valor total-->
         <div class="form-group col-md">
           <label for="valor_total">Valor Total</label>
-          <input type="text" class="form-control" id="valor_total" [(ngModel)]="insumo.valor_total" autocomplete="off">
+          <input type="number" class="form-control" id="valor_total" [(ngModel)]="insumo.valor_total" autocomplete="off">
 
           <!--Mostra o erro caso ocorra algum-->
           <ul *ngIf="errorMessages" class="error-list col-md">
