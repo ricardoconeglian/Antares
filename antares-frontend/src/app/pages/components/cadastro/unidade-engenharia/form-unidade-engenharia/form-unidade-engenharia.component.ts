@@ -3,6 +3,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 import { ApiUnidadeEngenhariaService } from 'src/app/shared/services/api-unidade-engenharia.service';
 import { MessagesService } from 'src/app/shared/services/messages.service';
+import { UnidadeEngenharia } from '../shared/unidade-engenharia.model';
 
 @Component({
   selector: 'app-form-unidade-engenharia',
@@ -20,10 +21,8 @@ export class FormUnidadeEngenhariaComponent implements OnInit {
   protected route: ActivatedRoute;
 
 //Array que recebe os valores de input dos dados para envio ao banco de dados
- unidadeEngenharia = {descricao: '', unidade: ''}
- unidadeEngenharias = [
-    {descricao: '', unidade:''},
-  ]
+ unidadeEngenharia: UnidadeEngenharia | any
+ unidadeEngenharias: UnidadeEngenharia[] = []
 
 //Array de erros recebidos da API
 errorMessages = {
@@ -40,7 +39,7 @@ errorMessages = {
 
     ) {
     this.route = this.injector.get(ActivatedRoute); //Injeção de dependencia da rota
-
+    this.unidadeEngenharia = new UnidadeEngenharia();
    }
 
   ngOnInit(): void {

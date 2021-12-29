@@ -1,6 +1,7 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ApiTipoManufaturaService } from 'src/app/shared/services/api-tipo-manufatura.service';
+import { TipoManufatura } from '../../shared/tipo-manufatura.model';
 
 @Component({
   selector: 'app-lista-tipo-manufatura',
@@ -10,12 +11,10 @@ import { ApiTipoManufaturaService } from 'src/app/shared/services/api-tipo-manuf
 export class ListaTipoManufaturaComponent implements OnInit {
 
   //Cria um array com os dados de tipo manufatura
-  tipoManufatura = {id: '', tipo_manufatura: ''}
+  tipoManufatura: TipoManufatura | any;
 
   //Array que recebera os produtos vindos do banco de dados
-  tipoManufaturas = [
-    {id: '', tipo_manufatura: ''}
-  ];
+  tipoManufaturas: TipoManufatura[] = [];
 
 
   //recebe ID selecionado para delete

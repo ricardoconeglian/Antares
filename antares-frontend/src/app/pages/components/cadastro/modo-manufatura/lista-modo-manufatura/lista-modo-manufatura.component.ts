@@ -1,6 +1,7 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ApiModoManufaturaService } from 'src/app/shared/services/api-modo-manufatura.service';
+import { ModoManufatura } from '../shared/modo-manufatura.model';
 
 @Component({
   selector: 'app-lista-modo-manufatura',
@@ -10,12 +11,10 @@ import { ApiModoManufaturaService } from 'src/app/shared/services/api-modo-manuf
 export class ListaModoManufaturaComponent implements OnInit {
 
   //Cria um array com os dados de modo manufatura
-  modoManufatura = {id: '', modo_manufatura: ''}
+  modoManufatura: ModoManufatura | any;
 
   //Array que recebera os modos de manufatura vindos do banco de dados
-  modoManufaturas = [
-    {id: '', modo_manufatura: ''}
-  ];
+  modoManufaturas: ModoManufatura[] = []
 
 
   //recebe ID selecionado para delete
@@ -28,7 +27,7 @@ export class ListaModoManufaturaComponent implements OnInit {
 
       this.carregarModoManufatura() //carrega todos os modos de manufatura na tabela toda vez que inicializa a pagina
       this.route = this.injector.get(ActivatedRoute); //Injeção de dependencia da rota
-
+      
      }
 
   ngOnInit(): void {

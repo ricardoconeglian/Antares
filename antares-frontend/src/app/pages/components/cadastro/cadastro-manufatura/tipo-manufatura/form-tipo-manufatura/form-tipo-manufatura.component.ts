@@ -4,6 +4,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 import { ApiTipoManufaturaService } from 'src/app/shared/services/api-tipo-manufatura.service';
 import { MessagesService } from 'src/app/shared/services/messages.service';
+import { TipoManufatura } from '../../shared/tipo-manufatura.model';
 
 @Component({
   selector: 'app-form-tipo-manufatura',
@@ -21,10 +22,8 @@ export class FormTipoManufaturaComponent implements OnInit {
   protected route: ActivatedRoute;
 
   //Array que recebe os valores de input dos dados para envio ao banco de dados
-  tipoManufatura = { tipo_manufatura: ''}
-  tipoManufaturas = [
-    { tipo_manufatura: ''},
-  ]
+  tipoManufatura: TipoManufatura | any
+  tipoManufaturas: TipoManufatura[] = []
 
   //Array de erros recebidos da API
   errorMessages = {
@@ -42,7 +41,7 @@ export class FormTipoManufaturaComponent implements OnInit {
 
     ) {
     this.route = this.injector.get(ActivatedRoute); //Injeção de dependencia da rota
-
+    this.tipoManufatura = new TipoManufatura()
    }
 
   ngOnInit(): void {

@@ -1,6 +1,7 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ApiCadastroInsumoService } from 'src/app/shared/services/api-cadastro-insumo.service';
+import { CadastroInsumo } from '../shared/cadastro-insumo.model';
 
 @Component({
   selector: 'app-lista-cadastro-insumo',
@@ -10,12 +11,10 @@ import { ApiCadastroInsumoService } from 'src/app/shared/services/api-cadastro-i
 export class ListaCadastroInsumoComponent implements OnInit {
 
   //Cria um array com os dados de insumo
-  insumo = {id: '', codigo_sap_insumo: '', descricao_insumo: ''}
+  insumo: CadastroInsumo | any;
 
   //Array que recebera os insumos vindos do banco de dados
-  insumos = [
-    {id: '', codigo_sap_insumo: '', descricao_insumo: ''}
-  ];
+  insumos: CadastroInsumo[] = [];
 
 
   //recebe ID selecionado para delete
@@ -28,7 +27,7 @@ export class ListaCadastroInsumoComponent implements OnInit {
 
       this.carregarInsumo() //carrega todos os insumos na tabela toda vez que inicializa a pagina
       this.route = this.injector.get(ActivatedRoute); //Injeção de dependencia da rota
-
+     
      }
 
   ngOnInit(): void {

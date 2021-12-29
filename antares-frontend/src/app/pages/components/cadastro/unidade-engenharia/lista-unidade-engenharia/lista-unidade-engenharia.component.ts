@@ -1,6 +1,7 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ApiUnidadeEngenhariaService } from 'src/app/shared/services/api-unidade-engenharia.service';
+import { UnidadeEngenharia } from '../shared/unidade-engenharia.model';
 
 @Component({
   selector: 'app-lista-unidade-engenharia',
@@ -10,13 +11,10 @@ import { ApiUnidadeEngenhariaService } from 'src/app/shared/services/api-unidade
 export class ListaUnidadeEngenhariaComponent implements OnInit {
 
   //Cria um array com os dados de unidade de engenharia
-  unidadeEngenharia = {id: '', descricao: '', unidade: ''}
+  unidadeEngenharia: UnidadeEngenharia | any;
 
   //Array que recebera as unidades de engenharia vindos do banco de dados
- unidadeEngenharias = [
-    {id: '', descricao: '', unidade: ''}
-  ];
-
+ unidadeEngenharias: UnidadeEngenharia[] = [];
 
   //recebe ID selecionado para delete
   selected_id: number | any;

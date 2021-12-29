@@ -2,6 +2,7 @@ import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ApiModoManufaturaService } from 'src/app/shared/services/api-modo-manufatura.service';
 import { MessagesService } from 'src/app/shared/services/messages.service';
+import { ModoManufatura } from '../shared/modo-manufatura.model';
 
 
 @Component({
@@ -20,10 +21,8 @@ export class FormModoManufaturaComponent implements OnInit {
   protected route: ActivatedRoute;
 
 //Array que recebe os valores de input dos dados para envio ao banco de dados
- modoManufatura = {modo_manufatura: ''}
- modoManufaturas = [
-    {modo_manufatura: ''},
-  ]
+ modoManufatura: ModoManufatura | any
+ modoManufaturas: ModoManufatura[] = []
 
   //Array de erros recebidos da API
   errorMessages = {
@@ -40,7 +39,7 @@ export class FormModoManufaturaComponent implements OnInit {
 
     ) {
     this.route = this.injector.get(ActivatedRoute); //Injeção de dependencia da rota
-
+    this.modoManufatura = new ModoManufatura()
    }
 
   ngOnInit(): void {

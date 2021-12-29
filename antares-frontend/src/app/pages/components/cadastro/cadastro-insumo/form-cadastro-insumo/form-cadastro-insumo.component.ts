@@ -2,6 +2,7 @@ import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ApiCadastroInsumoService } from 'src/app/shared/services/api-cadastro-insumo.service';
 import { MessagesService } from 'src/app/shared/services/messages.service';
+import { CadastroInsumo } from '../shared/cadastro-insumo.model';
 
 @Component({
   selector: 'app-form-cadastro-insumo',
@@ -19,10 +20,8 @@ export class FormCadastroInsumoComponent implements OnInit {
   protected route: ActivatedRoute;
 
 //Array que recebe os valores de input dos dados para envio ao banco de dados
-  insumo = {id: '', codigo_sap_insumo: '', descricao_insumo: ''}
-  insumos = [
-    {id: '', codigo_sap_insumo: '', descricao_insumo: ''}
-  ];
+  insumo: CadastroInsumo | any;
+  insumos: CadastroInsumo[] = []
 
   //Array de erros recebidos da API
   errorMessages = {
@@ -41,7 +40,7 @@ export class FormCadastroInsumoComponent implements OnInit {
 
     ) {
     this.route = this.injector.get(ActivatedRoute); //Injeção de dependencia da rota
-
+    this.insumo = new CadastroInsumo()
    }
 
   ngOnInit(): void {
