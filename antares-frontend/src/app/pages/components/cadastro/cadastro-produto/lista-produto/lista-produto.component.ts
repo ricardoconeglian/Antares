@@ -2,6 +2,7 @@ import { Component, Injector, OnInit} from '@angular/core';
 
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ApiProdutoService } from 'src/app/shared/services/api-produto.service';
+import { CadastroProduto } from '../shared/cadastro-produto.model';
 
 
 @Component({
@@ -11,12 +12,10 @@ import { ApiProdutoService } from 'src/app/shared/services/api-produto.service';
 })
 export class ListaProdutoComponent implements OnInit {
 
-  produto = {codigo_sap_produto: '', nome_produto: '', descricao_produto: '', utilizacao: '', projeto: '', foto: ''}
+  produto: CadastroProduto | any;
 
   //Array que recebera os produtos vindos do banco de dados
-  produtos = [
-    {id:'', codigo_sap_produto: '', nome_produto: '', descricao_produto: '', utilizacao: '', projeto: '', foto: ''}
-  ];
+  produtos: CadastroProduto[] = []
 
   //recebe ID selecionado para delete
   selected_id: number | any;
@@ -38,7 +37,7 @@ export class ListaProdutoComponent implements OnInit {
       this.route.paramMap.subscribe((param: ParamMap) => {
       let id = parseInt(param.get('id') || '{}');
       this.selected_id = id;
-      
+
 
     })
   }
