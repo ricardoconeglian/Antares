@@ -26,9 +26,7 @@ export class FormTipoManufaturaComponent implements OnInit {
   tipoManufaturas: TipoManufatura[] = []
 
   //Array de erros recebidos da API
-  errorMessages = {
-    tipo_manufatura: ''
-  }
+  errorMessages: TipoManufatura | any
 
 
 

@@ -25,10 +25,7 @@ export class FormUnidadeEngenhariaComponent implements OnInit {
  unidadeEngenharias: UnidadeEngenharia[] = []
 
 //Array de erros recebidos da API
-errorMessages = {
-  descricao: '',
-  unidade: ''
-}
+errorMessages: UnidadeEngenharia | any
 
   constructor(
     protected router: Router,

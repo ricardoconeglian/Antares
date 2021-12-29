@@ -25,9 +25,7 @@ export class FormModoManufaturaComponent implements OnInit {
  modoManufaturas: ModoManufatura[] = []
 
   //Array de erros recebidos da API
-  errorMessages = {
-    modo_manufatura: ''
-  }
+  errorMessages: ModoManufatura | any
 
 
   constructor(

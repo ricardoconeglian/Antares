@@ -30,12 +30,7 @@ export class CadastroProdutoComponent implements OnInit {
   produtos: CadastroProduto[] = []
 
   //Array de erros recebidos da API
-  errorMessages = {
-    codigo_sap_produto: '',
-    nome_produto: '',
-    descricao_produto: '',
-    utilizacao: ''
-  }
+  errorMessages: CadastroProduto | any;
 
   constructor(
     protected router: Router,

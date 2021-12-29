@@ -24,10 +24,7 @@ export class FormCadastroInsumoComponent implements OnInit {
   insumos: CadastroInsumo[] = []
 
   //Array de erros recebidos da API
-  errorMessages = {
-    codigo_sap_insumo: '',
-    descricao_insumo: '',
-  }
+  errorMessages: CadastroInsumo | any;
 
 
 
