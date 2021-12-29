@@ -2,6 +2,7 @@ import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router'
 import { ApiProdutoService } from 'src/app/shared/services/api-produto.service';
 import { MessagesService } from 'src/app/shared/services/messages.service';
+import {CadastroProduto} from '../shared/cadastro-produto.model';
 
 
 
@@ -23,12 +24,10 @@ export class CadastroProdutoComponent implements OnInit {
   protected route: ActivatedRoute;
 
   // Lista que recebe os valores vindos dos campos de cadastro do HTML
-  produto = {codigo_sap_produto: '', nome_produto: '', descricao_produto: '', utilizacao: '', projeto: '', foto: ''}
+  produto: CadastroProduto | any;
 
   //Lista de produtos que será enviado para o banco de dados
-  produtos = [
-    {codigo_sap_produto: '', nome_produto: '', descricao_produto: '', utilizacao: '', projeto: '', foto: ''},
-  ];
+  produtos: CadastroProduto[] = []
 
   //Array de erros recebidos da API
   errorMessages = {
@@ -44,9 +43,9 @@ export class CadastroProdutoComponent implements OnInit {
     protected injector: Injector,
     protected messagesService: MessagesService,
 
-
     ) {
     this.route = this.injector.get(ActivatedRoute); //Injeção de dependencia da rota
+    this.produto = new CadastroProduto()
    }
 
   ngOnInit(): void {
