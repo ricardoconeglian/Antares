@@ -56,7 +56,7 @@ export class ListaEstoqueInsumoComponent implements OnInit {
      this.api.getListEstoqueInsumo().subscribe(
        data => {
          this.estoqueInsumos = data
-         console.log(this.estoqueInsumos)
+         
        },
        error => {
          console.log("Aconteceu um erro", error)
@@ -98,7 +98,7 @@ export class ListaEstoqueInsumoComponent implements OnInit {
      this.apiCadastroInsumo.getAllInsumo().subscribe(
       data => {
         this.getAllCadastroInsumo = data;
-        console.log(this.getAllCadastroInsumo)
+
       },
       error => {
         console.log("Aconteceu um erro", error);
