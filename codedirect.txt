@@ -1,0 +1,1 @@
+https://coderedirect.com/questions/327997/django-rest-framework-flat-read-write-serializer

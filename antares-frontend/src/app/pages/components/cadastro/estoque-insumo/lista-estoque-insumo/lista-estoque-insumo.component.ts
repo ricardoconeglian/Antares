@@ -2,6 +2,7 @@ import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ApiCadastroInsumoService } from 'src/app/shared/services/api-cadastro-insumo.service';
 import { ApiEstoqueInsumoService } from 'src/app/shared/services/api-estoque-insumo.service';
+import { EstoqueInsumo } from '../shared/estoque-insumo.model';
 
 
 @Component({
@@ -12,12 +13,16 @@ import { ApiEstoqueInsumoService } from 'src/app/shared/services/api-estoque-ins
 export class ListaEstoqueInsumoComponent implements OnInit {
 
    //Cria um array com os dados de estoque insumo
-   estoqueInsumo = {id: '', descricao_insumo:{descricao_insumo: '', codigo_sap_insumo: ''}, unidade: '', quantidade: '', valor_unitario:'', valor_total: '', estoque_minimo: ''}
+   //estoqueInsumo = {id: '', descricao_insumo:{descricao_insumo: '', codigo_sap_insumo: ''}, unidade: {id: '', unidade: '', descricao: ''}, quantidade: '', valor_unitario:'', valor_total: '', estoque_minimo: ''}
 
    //Array que recebera os estoque de insumo vindos do banco de dados
+/*
    estoqueInsumos = [
-    {id: '', descricao_insumo:{descricao_insumo: '', codigo_sap_insumo: ''}, unidade: '', quantidade: '', valor_unitario:'', valor_total: '', estoque_minimo: ''}
+    {id: '', descricao_insumo:{descricao_insumo: '', codigo_sap_insumo: ''}, unidade: {id: '', unidade: '', descricao: ''}, quantidade: '', valor_unitario:'', valor_total: '', estoque_minimo: ''}
    ];
+*/
+   estoqueInsumo: EstoqueInsumo | any
+   estoqueInsumos: EstoqueInsumo[] = []
 
    getAllCadastroInsumo:[
          {id: '', codigo_sap_insumo: '', descricao_insumo: ''}
@@ -38,6 +43,8 @@ export class ListaEstoqueInsumoComponent implements OnInit {
        this.carregarEstoqueInsumo() //carrega todos os estoque de insumo na tabela toda vez que inicializa a pagina
        this.route = this.injector.get(ActivatedRoute); //Injeção de dependencia da rota
        this.getCadastroInsumo()
+       this.estoqueInsumo = new EstoqueInsumo();
+
 
       }
 
@@ -53,10 +60,10 @@ export class ListaEstoqueInsumoComponent implements OnInit {
 
    //Carrega os estoque de insumo que estão no banco de dados
    carregarEstoqueInsumo = () => {
-     this.api.getListEstoqueInsumo().subscribe(
+     this.api.getAllEstoqueInsumo().subscribe(
        data => {
          this.estoqueInsumos = data
-         
+
        },
        error => {
          console.log("Aconteceu um erro", error)

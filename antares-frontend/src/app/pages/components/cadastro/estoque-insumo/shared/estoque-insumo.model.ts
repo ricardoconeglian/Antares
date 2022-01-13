@@ -2,23 +2,22 @@ import {BaseResourceModel} from '../../../../../shared/models/base-resource.mode
 import { CadastroInsumo } from '../../cadastro-insumo/shared/cadastro-insumo.model';
 import { UnidadeEngenharia } from '../../unidade-engenharia/shared/unidade-engenharia.model';
 
-export class EstoqueInsumo extends BaseResourceModel {
-  static EstoqueInsumo: EstoqueInsumo;
+export class EstoqueInsumo {
+  id: number;
+  descricao_insumo: CadastroInsumo;
+  unidade: number;
+  quantidade?: number;
+  estoque_minimo?: number;
+  valor_unitario?: number;
+  valor_total?: number;
+}
 
-  constructor(
-    public id?: number,
-    public descricao_insumo?: CadastroInsumo,
-    public unidade?: UnidadeEngenharia,
-    public quantidade?: number,
-    public estoque_minimo?: number,
-    public valor_unitario?: number,
-    public valor_total?: number,
-
-  ){
-    super()
-  }
-
-  static fromJson(jsonData: any): EstoqueInsumo {
-    return Object.assign(new EstoqueInsumo(), jsonData)
-  }
+export class ListaEstoqueInsumo {
+  id: number;
+  descricao_insumo: CadastroInsumo;
+  unidade: UnidadeEngenharia;
+  quantidade?: number;
+  estoque_minimo?: number;
+  valor_unitario?: number;
+  valor_total?: number;
 }

@@ -16,7 +16,15 @@ class UnidadeEngenhariaViewSet(viewsets.ModelViewSet):
 # View CRUD cadastro de estoque insumo
 class EstoqueInsumoViewSet(viewsets.ModelViewSet):
     queryset = EstoqueInsumo.objects.all()
-    serializer_class = EstoqueInsumoSerializer
+    #serializer_class = EstoqueInsumoSerializer
+
+    def get_serializer_class(self):
+        if self.request.method in ['GET']:
+            return ListaEstoqueInsumoSerializer
+        else:
+            return EstoqueInsumoSerializer
+
+
     
     #def quantidadeEstoque(self, queryset):
      #   estoque = queryset.valor_unitario
@@ -24,7 +32,7 @@ class EstoqueInsumoViewSet(viewsets.ModelViewSet):
        # balanco = estoque * total
 
 # Lista cadastro de estoque Insumos
-class ListaEstoqueInsumoViewSet(viewsets.ModelViewSet):
-    queryset = EstoqueInsumo.objects.all()
-    serializer_class = ListaEstoqueInsumoSerializer
-    http_method_names = ['get']
+#class ListaEstoqueInsumoViewSet(viewsets.ModelViewSet):
+#    queryset = EstoqueInsumo.objects.all()
+#    serializer_class = ListaEstoqueInsumoSerializer
+  #  http_method_names = ['get']

@@ -29,12 +29,12 @@ class UnidadeEngenhariaSerializer(serializers.ModelSerializer):
 class EstoqueInsumoSerializer(serializers.ModelSerializer):       
 
     descricao_insumo =  CadastroInsumoSerializer
-    
+   
     class Meta:
         model = EstoqueInsumo
         fields = (
             'id',             
-            'descricao_insumo',
+            'descricao_insumo',            
             'unidade',
             'quantidade',
             'valor_unitario',
@@ -44,10 +44,13 @@ class EstoqueInsumoSerializer(serializers.ModelSerializer):
 
 
 # Serialização da lista cadastro de estoque de insumo, transformando todos os campos em JSON
-class ListaEstoqueInsumoSerializer(serializers.ModelSerializer):       
+class ListaEstoqueInsumoSerializer(EstoqueInsumoSerializer):
+         
 
-    descricao_insumo =  CadastroInsumoSerializer(required=True)
+    descricao_insumo =  CadastroInsumoSerializer(read_only=True)
+    unidade = UnidadeEngenhariaSerializer(read_only=True)
     
+    """
     class Meta:
         model = EstoqueInsumo
         fields = (
@@ -59,3 +62,4 @@ class ListaEstoqueInsumoSerializer(serializers.ModelSerializer):
             'valor_total',
             'estoque_minimo',            
         )
+"""

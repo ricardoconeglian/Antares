@@ -10,19 +10,21 @@
       <div class="row">
         <div class="form-group col-md-4">
           <label for="codigo_sap_insumo">Código SAP</label>
-          <input type="number" class="form-control" id="codigo_sap_insumo" [(ngModel)]="insumo.codigo_sap_insumo" autocomplete="off" disabled="">
+          <input type="number" class="form-control" id="codigo_sap_insumo" [(ngModel)]="insumo.descricao_insumo.codigo_sap_insumo" autocomplete="off" disabled="">
 
-          <!--Mostra o erro caso ocorra algum-->
+          <!--Mostra o erro caso ocorra algum -->
           <ul *ngIf="errorMessages" class="error-list col-md">
             <li class="alert-danger">{{errorMessages.codigo_sap_insumo}}</li>
           </ul>
 
         </div>
 
+
+
         <!--Campo descrição do Insumo-->
         <div class="form-group col-md-8">
           <label for="descricao_insumo">Descrição do Insumo</label>
-          <input type="text" class="form-control" id="descricao_insumo" [(ngModel)]="insumo.descricao_insumo" autocomplete="off" disabled="">
+          <input type="text" class="form-control" id="descricao_insumo" [(ngModel)]="insumo.descricao_insumo.descricao_insumo" autocomplete="off" disabled="">
 
           <!--Mostra o erro caso ocorra algum-->
           <ul *ngIf="errorMessages" class="error-list col-md">
@@ -37,10 +39,9 @@
         <div class="form-group col-md">
           <label for="unidade">Unidade de Engenharia</label>
 
-          <select name="unidade" class="form-control" id="unidade">
+          <select [ngModel]="insumo.unidade" (ngModelChange)="unidadeSelectChange($event)" class="form-control" id="unidade">
             <option></option>
-            <option *ngFor="let unidade of unidadeEngenharias" [value]="unidade.descricao">{{unidade.descricao}}</option>
-
+            <option *ngFor="let unidade_select of unidadeEngenharias" [ngValue]="unidade_select.id">{{ unidade_select.unidade  }}</option>
           </select>
 
           <!--Mostra o erro caso ocorra algum-->
@@ -110,5 +111,5 @@
 <button class="btn btn-success" (click)="save()">Salvar</button>
 <button class="btn btn-primary">Listar Cadastro Insumos</button>
 
-
+<pre>{{insumo | json}}</pre>
 
