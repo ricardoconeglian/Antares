@@ -28,15 +28,15 @@ export class ListaEstoqueInsumoComponent implements OnInit {
      protected injector: Injector,
      protected apiCadastroInsumo: ApiCadastroInsumoService,
 
-     ) {
+    ){
 
        this.carregarEstoqueInsumo() //carrega todos os estoque de insumo na tabela toda vez que inicializa a pagina
        this.route = this.injector.get(ActivatedRoute); //Injeção de dependencia da rota
 
-      
 
 
-      }
+
+    }
 
    ngOnInit(): void {
      //Pega o numero do id vindo da URL e passa como parametro no função carregaEstoqueInsumo()
