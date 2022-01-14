@@ -1,8 +1,10 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router'
+import { ApiCadastroInsumoService } from 'src/app/shared/services/api-cadastro-insumo.service';
 import { ApiEstoqueInsumoService } from 'src/app/shared/services/api-estoque-insumo.service';
 import { ApiUnidadeEngenhariaService } from 'src/app/shared/services/api-unidade-engenharia.service';
 import { MessagesService } from 'src/app/shared/services/messages.service';
+import { CadastroInsumo } from '../../cadastro-insumo/shared/cadastro-insumo.model';
 
 import { UnidadeEngenharia } from '../../unidade-engenharia/shared/unidade-engenharia.model';
 import { EstoqueInsumo } from '../shared/estoque-insumo.model';
@@ -24,31 +26,12 @@ export class FormEstoqueInsumoComponent implements OnInit {
   protected route: ActivatedRoute;
 
 
-  // Lista que recebe os valores vindos dos campos de cadastro do HTML
-  /*
-  insumo = {codigo_sap_insumo: '',
-  descricao_insumo: '',
-  unidade: '',
-  quantidade: '',
-  estoque_minimo: '',
-  valor_unitario: '',
-  valor_total: ''}
-
-  //Lista de estoque de insumos que será enviado para o banco de dados
-  insumos = [
-    {codigo_sap_insumo: '',
-    descricao_insumo: '',
-    unidade: '',
-    quantidade: '',
-    estoque_minimo: '',
-    valor_unitario: '',
-    valor_total: ''},
-  ];
-*/
 
   insumo: EstoqueInsumo;
   insumos: EstoqueInsumo [] = []
   unidadeEngenharias: UnidadeEngenharia[] = []
+
+
 
   //Array de erros recebidos da API
   errorMessages = {
@@ -66,9 +49,11 @@ export class FormEstoqueInsumoComponent implements OnInit {
     protected api: ApiEstoqueInsumoService,
     protected injector: Injector,
     protected messagesService: MessagesService,
-    protected apiUnidadeEngenharia: ApiUnidadeEngenhariaService
+    protected apiUnidadeEngenharia: ApiUnidadeEngenhariaService,
+
   ) {
     this.route = this.injector.get(ActivatedRoute); //Injeção de dependencia da rota
+
   }
 
   ngOnInit(): void {
@@ -79,6 +64,7 @@ export class FormEstoqueInsumoComponent implements OnInit {
       this.carregaEstoqueInsumo(id)
       this.carregarUnidadeEngenharia()
 
+
     })
 
   }
@@ -86,6 +72,7 @@ export class FormEstoqueInsumoComponent implements OnInit {
 
   ngAfterContentChecked(): void {
     this.setTituloPagina(); // Monitora constantemente se houve alteração cadastrar/editar
+
   }
 
   /**-------------------------------------------------------------------------------------
@@ -158,13 +145,14 @@ export class FormEstoqueInsumoComponent implements OnInit {
     this.apiUnidadeEngenharia.getAllUniEng().subscribe(
       data => {
         this.unidadeEngenharias = data;
-        console.log(this.unidadeEngenharias)
       },
       error => {
         console.log("Aconteceu um erro", error)
       }
     )
   }
+
+  
 
 
   /* --------------------------------------------------------
@@ -181,8 +169,11 @@ export class FormEstoqueInsumoComponent implements OnInit {
 
   //Verifica se está sendo criado um novo estoque de insumos ou editando
   protected setTituloPagina(){
-    if(this.currentAction == 'new')
+    if(this.currentAction == 'new'){
       this.tituloPagina = this.criarTituloPagina();
+
+
+    }
     else{
       this.tituloPagina = this.editarTituloPagina();
     }
@@ -201,5 +192,9 @@ export class FormEstoqueInsumoComponent implements OnInit {
     console.log('unidadeSelectChange', e);
     this.insumo.unidade = parseInt(e);
   }
+
+
+
+
 
 }

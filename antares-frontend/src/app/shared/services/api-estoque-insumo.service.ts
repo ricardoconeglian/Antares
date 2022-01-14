@@ -50,12 +50,8 @@ export class ApiEstoqueInsumoService {
 
    // deleta o estoque de insumo
    deleteEstoqueInsumo(estoqueInsumo:any) : Observable<any>{
-     return this.http.delete(this.baseUrl + 'insumo/cadastro-insumo/' + estoqueInsumo.id + '/',
+     return this.http.delete(this.baseUrl + 'insumo/estoque-insumo/' + estoqueInsumo.id + '/',
      {headers: this.httpHeaders});
    }
-
-
-
-
 
 }
