@@ -164,6 +164,7 @@ export class FormEstoqueInsumoComponent implements OnInit {
   */
   //Recebe do browser a URL para identificar se está sendo feito a criação ou edição
   protected setCurrentAction(){
+    
     if(this.route.snapshot.url[0].path == "new")
       this.currentAction = "new"
     else
@@ -208,6 +209,6 @@ export class FormEstoqueInsumoComponent implements OnInit {
     )
   }
 
- 
+
 
 }
