@@ -1,7 +1,9 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ApiCadastroInsumoService } from 'src/app/shared/services/api-cadastro-insumo.service';
 import { ApiModoManufaturaService } from 'src/app/shared/services/api-modo-manufatura.service';
 import { MessagesService } from 'src/app/shared/services/messages.service';
+import { CadastroInsumo } from '../../cadastro-insumo/shared/cadastro-insumo.model';
 import { ModoManufatura } from '../shared/modo-manufatura.model';
 
 
@@ -24,6 +26,8 @@ export class FormModoManufaturaComponent implements OnInit {
  modoManufatura: ModoManufatura | any
  modoManufaturas: ModoManufatura[] = []
 
+
+
   //Array de erros recebidos da API
   errorMessages: ModoManufatura | any
 
@@ -33,11 +37,12 @@ export class FormModoManufaturaComponent implements OnInit {
     protected api: ApiModoManufaturaService,
     protected injector: Injector,
     protected messagesService: MessagesService,
-
+    protected apiInsumo: ApiCadastroInsumoService
 
     ) {
     this.route = this.injector.get(ActivatedRoute); //Injeção de dependencia da rota
     this.modoManufatura = new ModoManufatura()
+
    }
 
   ngOnInit(): void {
@@ -46,7 +51,7 @@ export class FormModoManufaturaComponent implements OnInit {
     this.route.paramMap.subscribe((param: ParamMap) => {
       let id = parseInt(param.get('id') || '{}');
       this.carregaModoManufatura(id)
-
+      
     })
   }
 
@@ -144,7 +149,6 @@ export class FormModoManufaturaComponent implements OnInit {
     const nomeModoManufatura = this.modoManufatura.modo_manufatura || "";
     return "Editar Modo Manufatura: " + nomeModoManufatura // Escreve a string no titulo quando é edição
   }
-
 
 }
 

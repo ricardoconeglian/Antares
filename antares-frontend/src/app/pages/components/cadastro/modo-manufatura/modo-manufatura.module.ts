@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 
 
 
+
 @NgModule({
   declarations: [
     FormModoManufaturaComponent,
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     ModoManufaturaRoutingModule,
     SharedModule,
     FormsModule,
+   
 
   ]
 })

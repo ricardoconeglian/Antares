@@ -6,20 +6,21 @@ import { EstoqueInsumoRoutingModule } from './estoque-insumo-routing.module';
 import { FormEstoqueInsumoComponent } from './form-estoque-insumo/form-estoque-insumo.component';
 import { ListaEstoqueInsumoComponent } from './lista-estoque-insumo/lista-estoque-insumo.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { ListaProdutoComponent } from './lista-produto/lista-produto.component';
+import {DropdownModule} from 'primeng/dropdown';
 
 
 @NgModule({
   declarations: [
     FormEstoqueInsumoComponent,
     ListaEstoqueInsumoComponent,
-    ListaProdutoComponent
+
   ],
   imports: [
     CommonModule,
     EstoqueInsumoRoutingModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    DropdownModule
   ]
 })
 export class EstoqueInsumoModule { }

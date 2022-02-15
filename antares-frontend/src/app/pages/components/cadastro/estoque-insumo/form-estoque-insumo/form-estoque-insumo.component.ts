@@ -31,6 +31,9 @@ export class FormEstoqueInsumoComponent implements OnInit {
   insumos: EstoqueInsumo [] = []
   unidadeEngenharias: UnidadeEngenharia[] = []
 
+  cadastroInsumo: CadastroInsumo[]= []
+  selectedInsumo: CadastroInsumo
+
 
 
   //Array de erros recebidos da API
@@ -50,6 +53,7 @@ export class FormEstoqueInsumoComponent implements OnInit {
     protected injector: Injector,
     protected messagesService: MessagesService,
     protected apiUnidadeEngenharia: ApiUnidadeEngenhariaService,
+    protected apiInsumo: ApiCadastroInsumoService
 
   ) {
     this.route = this.injector.get(ActivatedRoute); //Injeção de dependencia da rota
@@ -63,8 +67,7 @@ export class FormEstoqueInsumoComponent implements OnInit {
       let id = parseInt(param.get('id') || '{}');
       this.carregaEstoqueInsumo(id)
       this.carregarUnidadeEngenharia()
-
-
+      this.carregarCadastroInsumo()
     })
 
   }
@@ -152,7 +155,7 @@ export class FormEstoqueInsumoComponent implements OnInit {
     )
   }
 
-  
+
 
 
   /* --------------------------------------------------------
@@ -193,8 +196,18 @@ export class FormEstoqueInsumoComponent implements OnInit {
     this.insumo.unidade = parseInt(e);
   }
 
+  carregarCadastroInsumo = () => {
+    this.apiInsumo.getAllInsumo().subscribe(
+      data => {
+        this.cadastroInsumo = data;
+        console.log(this.cadastroInsumo);
+      },
+      error => {
+        console.log("Aconteceu um erro", error)
+      }
+    )
+  }
 
-
-
+ 
 
 }

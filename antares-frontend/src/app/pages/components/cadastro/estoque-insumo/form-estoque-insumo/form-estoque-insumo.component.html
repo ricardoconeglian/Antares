@@ -20,11 +20,16 @@
         </div>
 
 
-
         <!--Campo descrição do Insumo-->
         <div class="form-group col-md-8">
-          <label for="descricao_insumo">Descrição do Insumo</label>
-          <input type="text" class="form-control" id="descricao_insumo" [(ngModel)]="insumo.descricao_insumo.descricao_insumo" autocomplete="off" disabled="">
+          <label for="descricao_insumo">Descrição Insumo</label>
+          <p-dropdown class="p-dropdown form-control"
+          [options]="cadastroInsumo"
+          [(ngModel)]="selectedInsumo"
+          [filter]="true"
+          placeholder=" "
+          optionLabel="descricao_insumo"
+          optionValue="id"></p-dropdown>
 
           <!--Mostra o erro caso ocorra algum-->
           <ul *ngIf="errorMessages" class="error-list col-md">
@@ -101,6 +106,8 @@
 
         </div>
       </div>
+
+
 
     </form>
   </div>
